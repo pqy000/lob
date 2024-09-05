@@ -5,7 +5,8 @@ import pickle5 as pickle
 word = pickle.load(open("data/TS_Data300.pkl", 'rb'), encoding='utf-8')
 word = word.dropna()
 raw_data = word['FCLOSE']
-feature = word[['OPEN', 'CLOSE', 'HIGH', 'LOW', 'VOL']].values.astype(float)
+feature = word[['OPEN', 'CLOSE', 'HIGH', 'LOW', 'VOL',
+                'FOPEN','FCLOSE','FHIGH','FLOW','FVOL']].values.astype(float)
 word, raw_time = word['FCLOSE'].to_numpy(), word['DATE'].to_numpy()
 true_label = list()
 threshold, threshold2, window_size = 0.0004, 0.0002, 10

@@ -21,13 +21,13 @@ class Data_utility(object):
         self.device = device
         self.P = args.window
         self.h = args.horizon
-        file_name = "data/" + file_name + ".npy"
-        self.rawdat = np.load(file_name)
-        self.rawdat = self.rawdat[:20000]
+        file_name = "newdata/" + file_name + ".npy"
+        self.rawdat = np.load(file_name)[:20000]
+        # self.rawdat = self.rawdat
         self.n, self.m = self.rawdat.shape[0], self.rawdat.shape[1]-1
 
         self.dat = self.rawdat[:,:-1]
-        self.label = self.rawdat[:,-1]
+        self.label = self.rawdat[:,-1] + 2
         self.num_classes = num_classes
         self.scale = np.ones(self.m)
         self._normalized(args.normalize)

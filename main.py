@@ -18,7 +18,7 @@ import torch.optim as opt
 
 import matplotlib.pyplot as plt
 parser = argparse.ArgumentParser(description='PyTorch Time series forecasting')
-parser.add_argument('--id', type=str, default="new_data/50_2020", help='location of the data file')
+parser.add_argument('--id', type=str, default="50_2020", help='location of the data file')
 parser.add_argument('--model', type=str, default='LSTNet',  help='')
 parser.add_argument('--window', type=int, default=96, help='window size')
 parser.add_argument('--horizon', type=int, default=1)

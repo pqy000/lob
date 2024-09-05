@@ -18,7 +18,6 @@ class Model(nn.Module):
         self.m = data.m
         self.hidR = args.hidRNN
         self.hidC = args.hidCNN
-        # self.hidS = args.hidSkip
         self.Ck = args.CNN_kernel
         self.cnn = None
 
