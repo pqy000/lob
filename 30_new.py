@@ -1,15 +1,14 @@
 import numpy as np
 import random
-from from_model import *
 import pickle5 as pickle
 
-word = pickle.load(open("TS_Data50.pkl", 'rb'), encoding='utf-8')
+word = pickle.load(open("data/TS_Data300.pkl", 'rb'), encoding='utf-8')
 word = word.dropna()
 raw_data = word['FCLOSE']
-word,raw_time = word['FCLOSE'].to_numpy(), word['DATE'].to_numpy()
+feature = word[['OPEN', 'CLOSE', 'HIGH', 'LOW', 'VOL']].values.astype(float)
+word, raw_time = word['FCLOSE'].to_numpy(), word['DATE'].to_numpy()
 true_label = list()
-threshold, threshold2 = 0.0004, 0.0002
-window_size = 20
+threshold, threshold2, window_size = 0.0004, 0.0002, 10
 total_len = 1000
 start_time = 256600
 end_time = 317290
@@ -17,7 +16,8 @@ total_len = 317290 - 256600
 length = 100
 
 data, time_data = word[start_time:end_time], raw_time[start_time:end_time]
-for i in range(len(data) - 100):
+feature = feature[start_time:end_time]
+for i in range(len(data)):
     total = sum(data[i:i+window_size])/window_size
     ratio = float(data[i]) / float(total) - 1
     if ratio > threshold: temp = 2
@@ -27,6 +27,9 @@ for i in range(len(data) - 100):
     elif ratio <= -threshold: temp = -2
     true_label.append(temp)
 
-combined_array = np.column_stack((data[length:], true_label))
-save_path = './50_2020'
+true_label = np.expand_dims(true_label, axis=1)
+combined_array = np.concatenate((feature, true_label), axis=1)
+print(combined_array.shape)
+# combined_array = np.column_stack((data[length:], true_label))
+save_path = './newdata/300_2020.npy'
 np.save(save_path, combined_array)
