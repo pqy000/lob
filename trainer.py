@@ -5,6 +5,31 @@ from utils import EarlyStopping, aleatoric_loss, mmd_loss
 import os
 import scipy.stats as st
 from sklearn.metrics import mean_squared_error,mean_absolute_error, r2_score, confusion_matrix
+import torch.nn.functional as F
+
+def label_smoothing(labels, num_classes, smoothing=0.1):
+    confidence = 1.0 - smoothing
+    smooth_value = smoothing / (num_classes - 1)
+    # Create one-hot labels and apply label smoothing
+    one_hot = torch.full((labels.size(0), num_classes), smooth_value, device=labels.device)
+    one_hot.scatter_(1, labels.unsqueeze(1), confidence)
+
+    return one_hot
+
+
+def compute_loss(output, target, num_classes, criterion,  use_label_smoothing=False, smoothing=0.1):
+    if use_label_smoothing:
+        # Apply label smoothing
+        smoothed_labels = label_smoothing(target, num_classes, smoothing=smoothing)
+
+        # Compute log softmax of the model output
+        log_probs = F.log_softmax(output, dim=-1)
+
+        # Use KLDivLoss to compute the loss between log_probs and smoothed_labels
+        loss = F.kl_div(log_probs, smoothed_labels, reduction='batchmean')
+    else:
+        loss = criterion(output, target)
+    return loss
 
 def origin_train(data, X, Y, model, optim, criterion, args):
     train_batch_losses = []
@@ -12,7 +37,9 @@ def origin_train(data, X, Y, model, optim, criterion, args):
     for batchX, batchY in data.get_batches(X, Y, args.batch_size):
         output = model(batchX)
         _, predictions = torch.max(output, 1)
-        loss = criterion(output, batchY)
+
+        loss = compute_loss(output, batchY,  5, criterion, args.label_smoothing, args.smoothing)
+        # loss = criterion(output, batchY)
         model.zero_grad()
         loss.backward()
         torch.nn.utils.clip_grad_norm_(model.parameters(), args.grad_clip)
@@ -41,6 +68,7 @@ def origin_eval(data, X, Y, model, criterion, args):
             output_predictions = torch.cat((output_predictions, predictions))
 
         loss = criterion(output, batchY)
+        # loss = compute_loss(output, batchY, 5, criterion, False, args.smoothing)
         valid_batch_losses.append(loss.item())
 
         temp = (predictions == batchY)
@@ -51,8 +79,28 @@ def origin_eval(data, X, Y, model, criterion, args):
                                 output_predictions.cpu().detach().numpy())
     c_m = confusion_matrix(check_test, check_output)
     accuracy = n_correct / n_total
+
     # classification_report(, digits=4)
-    return np.average(valid_batch_losses), accuracy
+    result = evaluate_performance(check_test, check_output)
+    return np.average(valid_batch_losses), accuracy, result
+
+
+def evaluate_performance(check_test, check_output):
+    mae = mean_absolute_error(check_test, check_output)
+    mse = mean_squared_error(check_test, check_output)
+    rmse = np.sqrt(mse)
+
+    r2 = r2_score(check_test, check_output)
+
+    # 打印分析结果
+
+    # 返回各项性能指标
+    return {
+        'mae': mae,
+        'mse': mse,
+        'rmse': rmse,
+        'r2': r2
+    }
 
 def calibration_train(data, X, Y, model, optim, epoch, args):
     # print('Epoch: %d' % epoch)

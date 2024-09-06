@@ -26,13 +26,6 @@ class Model(nn.Module):
         self.GRU1 = nn.GRU(self.hidC, self.hidR)
         self.dropout = nn.Dropout(p=args.dropout)
         self.linear1 = nn.Linear(self.hidR, self.m)
-        # if (self.hw > 0):
-        #     self.highway = nn.Linear(self.hw, 1)
-        # self.output = None
-        # if (args.output_fun == 'sigmoid'):
-        #     self.output = F.sigmoid
-        # if (args.output_fun == 'tanh'):
-        #     self.output = F.tanh
         self.linear2 = nn.Linear(self.m, data.num_classes)
 
     def forward(self, x):
