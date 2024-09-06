@@ -21,8 +21,8 @@ class Data_utility(object):
         self.device = device
         self.P = args.window
         self.h = args.horizon
-        file_name = "newdata/" + file_name + ".npy"
-        self.rawdat = np.load(file_name)[:6000]
+        file_name = file_name
+        self.rawdat = np.load(file_name)[0:5000]
         # self.rawdat = self.rawdat
         self.n, self.m = self.rawdat.shape[0], self.rawdat.shape[1]-1
 

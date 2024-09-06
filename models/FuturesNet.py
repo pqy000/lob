@@ -41,6 +41,7 @@ class Model(nn.Module):
         # lstm_out += skip_out  # Add skip connection
         lstm_out = lstm_out + skip_out
         out = self.fc(lstm_out[:, -1, :])  # 取最后一个时刻的输出
+        out = torch.softmax(out, dim=1)
         return out
 
 

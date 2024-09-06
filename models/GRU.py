@@ -15,4 +15,5 @@ class Model(nn.Module):
         out, _ = self.rnn(x)
         out_last = out[:, -1, :]  # Take the last time step
         out = self.fc(out_last)
+        out = torch.softmax(out, dim=1)
         return out

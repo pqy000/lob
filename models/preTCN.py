@@ -1,7 +1,7 @@
 # from tsai.models import InceptionTimePlus
 from tsai.models.InceptionTimePlus import InceptionTimePlus
 from torch import nn
-
+import torch
 
 class Model(nn.Module):
     def __init__(self, args, data, num_classes=5, pretrained=True):
@@ -17,4 +17,5 @@ class Model(nn.Module):
         x = x.transpose(1, 2)
         out = self.feature_extractor(x)
         out = self.fc(out)
+        out = torch.softmax(out, dim=1)
         return out

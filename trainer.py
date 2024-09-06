@@ -79,8 +79,6 @@ def origin_eval(data, X, Y, model, criterion, args):
                                 output_predictions.cpu().detach().numpy())
     c_m = confusion_matrix(check_test, check_output)
     accuracy = n_correct / n_total
-
-    # classification_report(, digits=4)
     result = evaluate_performance(check_test, check_output)
     return np.average(valid_batch_losses), accuracy, result
 

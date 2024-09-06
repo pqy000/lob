@@ -15,4 +15,5 @@ class Model(nn.Module):
         attn_output, _ = self.attn(x, x, x)
         out_last = attn_output[:, -1, :]  # Take the last time step
         out = self.fc(out_last)
+        out = torch.softmax(out, dim=1)
         return out

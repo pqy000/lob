@@ -1,0 +1,188 @@
+Model(
+  (feature_extractor): InceptionTimePlus(
+    (backbone): Sequential(
+      (0): InceptionBlockPlus(
+        (inception): ModuleList(
+          (0): InceptionModulePlus(
+            (bottleneck): ConvBlock(
+              (0): Conv1d(10, 32, kernel_size=(1,), stride=(1,), bias=False)
+            )
+            (convs): ModuleList(
+              (0): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(39,), stride=(1,), padding=(19,), bias=False)
+              )
+              (1): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(19,), stride=(1,), padding=(9,), bias=False)
+              )
+              (2): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(9,), stride=(1,), padding=(4,), bias=False)
+              )
+            )
+            (mp_conv): Sequential(
+              (0): MaxPool1d(kernel_size=3, stride=1, padding=1, dilation=1, ceil_mode=False)
+              (1): ConvBlock(
+                (0): Conv1d(10, 32, kernel_size=(1,), stride=(1,), bias=False)
+              )
+            )
+            (concat): Concat(dim=1)
+            (norm): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (act): ReLU()
+          )
+          (1): InceptionModulePlus(
+            (bottleneck): ConvBlock(
+              (0): Conv1d(128, 32, kernel_size=(1,), stride=(1,), bias=False)
+            )
+            (convs): ModuleList(
+              (0): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(39,), stride=(1,), padding=(19,), bias=False)
+              )
+              (1): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(19,), stride=(1,), padding=(9,), bias=False)
+              )
+              (2): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(9,), stride=(1,), padding=(4,), bias=False)
+              )
+            )
+            (mp_conv): Sequential(
+              (0): MaxPool1d(kernel_size=3, stride=1, padding=1, dilation=1, ceil_mode=False)
+              (1): ConvBlock(
+                (0): Conv1d(128, 32, kernel_size=(1,), stride=(1,), bias=False)
+              )
+            )
+            (concat): Concat(dim=1)
+            (norm): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (act): ReLU()
+          )
+          (2): InceptionModulePlus(
+            (bottleneck): ConvBlock(
+              (0): Conv1d(128, 32, kernel_size=(1,), stride=(1,), bias=False)
+            )
+            (convs): ModuleList(
+              (0): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(39,), stride=(1,), padding=(19,), bias=False)
+              )
+              (1): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(19,), stride=(1,), padding=(9,), bias=False)
+              )
+              (2): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(9,), stride=(1,), padding=(4,), bias=False)
+              )
+            )
+            (mp_conv): Sequential(
+              (0): MaxPool1d(kernel_size=3, stride=1, padding=1, dilation=1, ceil_mode=False)
+              (1): ConvBlock(
+                (0): Conv1d(128, 32, kernel_size=(1,), stride=(1,), bias=False)
+              )
+            )
+            (concat): Concat(dim=1)
+            (norm): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (3): InceptionModulePlus(
+            (bottleneck): ConvBlock(
+              (0): Conv1d(128, 32, kernel_size=(1,), stride=(1,), bias=False)
+            )
+            (convs): ModuleList(
+              (0): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(39,), stride=(1,), padding=(19,), bias=False)
+              )
+              (1): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(19,), stride=(1,), padding=(9,), bias=False)
+              )
+              (2): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(9,), stride=(1,), padding=(4,), bias=False)
+              )
+            )
+            (mp_conv): Sequential(
+              (0): MaxPool1d(kernel_size=3, stride=1, padding=1, dilation=1, ceil_mode=False)
+              (1): ConvBlock(
+                (0): Conv1d(128, 32, kernel_size=(1,), stride=(1,), bias=False)
+              )
+            )
+            (concat): Concat(dim=1)
+            (norm): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (act): ReLU()
+          )
+          (4): InceptionModulePlus(
+            (bottleneck): ConvBlock(
+              (0): Conv1d(128, 32, kernel_size=(1,), stride=(1,), bias=False)
+            )
+            (convs): ModuleList(
+              (0): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(39,), stride=(1,), padding=(19,), bias=False)
+              )
+              (1): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(19,), stride=(1,), padding=(9,), bias=False)
+              )
+              (2): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(9,), stride=(1,), padding=(4,), bias=False)
+              )
+            )
+            (mp_conv): Sequential(
+              (0): MaxPool1d(kernel_size=3, stride=1, padding=1, dilation=1, ceil_mode=False)
+              (1): ConvBlock(
+                (0): Conv1d(128, 32, kernel_size=(1,), stride=(1,), bias=False)
+              )
+            )
+            (concat): Concat(dim=1)
+            (norm): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (act): ReLU()
+          )
+          (5): InceptionModulePlus(
+            (bottleneck): ConvBlock(
+              (0): Conv1d(128, 32, kernel_size=(1,), stride=(1,), bias=False)
+            )
+            (convs): ModuleList(
+              (0): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(39,), stride=(1,), padding=(19,), bias=False)
+              )
+              (1): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(19,), stride=(1,), padding=(9,), bias=False)
+              )
+              (2): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(9,), stride=(1,), padding=(4,), bias=False)
+              )
+            )
+            (mp_conv): Sequential(
+              (0): MaxPool1d(kernel_size=3, stride=1, padding=1, dilation=1, ceil_mode=False)
+              (1): ConvBlock(
+                (0): Conv1d(128, 32, kernel_size=(1,), stride=(1,), bias=False)
+              )
+            )
+            (concat): Concat(dim=1)
+            (norm): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (shortcut): ModuleList(
+          (0): ConvBlock(
+            (0): Conv1d(10, 128, kernel_size=(1,), stride=(1,), bias=False)
+            (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (act): ModuleList(
+          (0): ReLU()
+          (1): ReLU()
+        )
+        (add): Add
+      )
+    )
+    (head): Sequential(
+      (0): Sequential(
+        (0): GAP1d(
+          (gap): AdaptiveAvgPool1d(output_size=1)
+          (flatten): Reshape(bs)
+        )
+        (1): LinBnDrop(
+          (0): Linear(in_features=128, out_features=5, bias=True)
+        )
+      )
+    )
+  )
+  (fc): Linear(in_features=5, out_features=5, bias=True)
+)
+number of parameters: 457251
+Training start
+epoch  1 | time used:  2.71s | train_loss 1.597 | valid loss 1.445 | valid acc 0.464 | mae 1.807 | mse 6.635 | rmse 2.58 | r2 -0.97
+epoch  2 | time used:  1.52s | train_loss 1.596 | valid loss 1.861 | valid acc 0.042 | mae 1.735 | mse 4.021 | rmse 2.01 | r2 -0.19
+epoch  3 | time used:  1.43s | train_loss 1.618 | valid loss 1.859 | valid acc 0.045 | mae 1.925 | mse 4.793 | rmse 2.19 | r2 -0.42
+epoch  4 | time used:  1.50s | train_loss 1.625 | valid loss 1.537 | valid acc 0.366 | mae 2.193 | mse 8.179 | rmse 2.86 | r2 -1.43

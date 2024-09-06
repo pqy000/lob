@@ -1,0 +1,152 @@
+wandb_version: 1
+
+CNN_kernel:
+  desc: null
+  value: 3
+_wandb:
+  desc: null
+  value:
+    cli_version: 0.12.17
+    framework: fastai
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    python_version: 3.7.12
+    start_time: 1725590915
+    t:
+      1:
+      - 1
+      - 4
+      - 5
+      - 41
+      - 53
+      - 55
+      2:
+      - 1
+      - 4
+      - 5
+      - 41
+      - 53
+      - 55
+      3:
+      - 16
+      4: 3.7.12
+      5: 0.12.17
+      8:
+      - 5
+batch_size:
+  desc: null
+  value: 64
+calib:
+  desc: null
+  value: true
+confidence:
+  desc: null
+  value: 95
+cuda:
+  desc: null
+  value: true
+delta:
+  desc: null
+  value: 0
+dropout:
+  desc: null
+  value: 0.3
+epochs:
+  desc: null
+  value: 20
+epochs_mmd:
+  desc: null
+  value: 10
+fc_hid_size:
+  desc: null
+  value: 24
+gpu:
+  desc: null
+  value: '6'
+grad_clip:
+  desc: null
+  value: 10
+hidCNN:
+  desc: null
+  value: 64
+hidRNN:
+  desc: null
+  value: 64
+highway_window:
+  desc: null
+  value: 3
+horizon:
+  desc: null
+  value: 1
+id:
+  desc: null
+  value: 300
+kernel_type:
+  desc: null
+  value: lob
+kwindow:
+  desc: null
+  value: 30
+label_smoothing:
+  desc: null
+  value: false
+lh_scale:
+  desc: null
+  value: 1.0
+lr:
+  desc: null
+  value: 0.2
+model:
+  desc: null
+  value: preTCN
+model_path:
+  desc: null
+  value: ./save
+momentum:
+  desc: null
+  value: 0.9
+n_rnns:
+  desc: null
+  value: 1
+normalize:
+  desc: null
+  value: 2
+optim:
+  desc: null
+  value: adam
+output_fun:
+  desc: null
+  value: tanh
+patience:
+  desc: null
+  value: 50
+prediction_window_size:
+  desc: null
+  value: 1
+rnn_hid_size:
+  desc: null
+  value: 50
+rnn_layers:
+  desc: null
+  value: 1
+seed:
+  desc: null
+  value: 1111
+smoothing:
+  desc: null
+  value: 0.08
+variance:
+  desc: null
+  value: true
+verbose:
+  desc: null
+  value: false
+weight_decay:
+  desc: null
+  value: 0.001
+window:
+  desc: null
+  value: 16
+year:
+  desc: null
+  value: 2020
