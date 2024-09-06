@@ -62,14 +62,6 @@ class Model(nn.Module):
         res = F.relu(res)
         res = self.linear2(res)
 
-
-        # if (self.hw > 0):
-        #
-        #     z = x[:, -self.hw:, :]
-        #     z = z.permute(0, 2, 1).contiguous().view(-1, self.hw)
-        #     z = self.highway(z)
-        #     z = z.view(-1, self.m)
-        #     res = res + z
         res = torch.softmax(res, dim=1)
 
         return res

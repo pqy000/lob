@@ -6,10 +6,15 @@ if [ ! -d "log" ]; then
   echo "Created log directory."
 fi
 
-# 从命令行参数获取 year, id 和 model 列表
+# 从命令行参数获取 year, id, model 列表 和 GPU 数量
 years=($1)
 ids=($2)
 models=($3)
+gpus=($4)  # 传入可用的 GPU 列表，例如 "0 1 2 3"
+
+# 变量初始化
+gpu_count=${#gpus[@]}  # 获取 GPU 数量
+gpu_index=0  # 用于分配 GPU 的索引
 
 # 循环遍历所有 id, year 和 model 组合
 for year in "${years[@]}"
@@ -18,15 +23,18 @@ do
   do
     for model in "${models[@]}"
     do
-      # 输出日志文件路径
-      log_file="log/output_${id}_${year}_${model}.log"
+      # 当前 GPU
+      gpu=${gpus[$gpu_index]}
 
-      echo "Running id=$id, year=$year, model=$model"
-      nohup python3 main.py --id $id --year $year --model $model > $log_file 2>&1 &
-      echo "Started process for id=$id, year=$year, model=$model in background with PID $!"
+      log_file="log/output_${id}_${year}_${model}_gpu${gpu}.log"
+      echo "Running id=$id, year=$year, model=$model on GPU $gpu"
+      nohup python3 main.py --id $id --year $year --model $model --gpu $gpu > $log_file 2>&1 &
+      echo "Started process for id=$id, year=$year, model=$model on GPU $gpu with PID $!"
+      gpu_index=$(( (gpu_index + 1) % gpu_count ))
     done
   done
 done
 
+# 等待所有后台任务完成
 wait
 echo "All processes completed."

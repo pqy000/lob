@@ -12,11 +12,13 @@ true_label = list()
 
 threshold, threshold2 = 0.0006, 0.0003
 window_size = 20
-total_len = 1000
+total_len = 10000
+# start_time = 317290
+# end_time = 375000 #2021
 start_time = 256600
 end_time = 317290 #2020
 total_len = 317290 - 256600
-
+# data, time_data = word[:total_len], raw_time[:total_len]
 data, time_data = word[start_time:end_time], raw_time[start_time:end_time]
 for i in range(len(data) - 100):
     total = sum(data[i:i+window_size])/window_size
@@ -27,14 +29,6 @@ for i in range(len(data) - 100):
     elif ratio <= -threshold2 and ratio > -threshold: temp = -1
     elif ratio <= -threshold: temp = -2
     true_label.append(temp)
-
-# Create a sample ndarray with shape (100,)
-array_data = np.random.rand(100)
-
-# Save the ndarray to a file
-save_path = '/mnt/data/array_data.npy'
-np.save(save_path, array_data)
-
 
 workbook = xlwt.Workbook(encoding= 'ascii')
 worksheet = workbook.add_sheet("My new Sheet")
@@ -51,6 +45,9 @@ worksheet.write(0, 9, "flag")
 worksheet.write(0, 10, "cum_s")
 worksheet.write(0, 11, "cum_win")
 
+# worksheet.write(0, 6, "成本")
+# worksheet.write(0, 7, "S值")
+# worksheet.write(0, 8, "盈利")
 
 otherdat = model_pred1(true_label)
 # otherdat2 = model_pred2(true_label)
@@ -71,7 +68,7 @@ for i in range(1, len(true_label)):
     worksheet.write(i, 4, float(true_label[i])/2)
     worksheet.write(i, 5, float(otherdat[i])/2)
     worksheet.write(i, 6, float(data[i+1]-data[i])*0.0002)
-    # s = float(data[i+1]-data[i])/float(data[i])*otherdat[i]
+
     s = float(data[i + 1] - data[i]) / float(data[i]) * true_label[i]
     worksheet.write(i, 7, s)
     worksheet.write(i, 8, s - float(data[i+1]-data[i])*0.0002)
