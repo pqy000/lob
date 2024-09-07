@@ -36,7 +36,7 @@ def get_args():
     parser.add_argument('--hidCNN', type=int, default=64, help='number of CNN hidden units (channels)')
     parser.add_argument('--CNN_kernel', type=int, default=3, help='the kernel size of the CNN layers')
     parser.add_argument('--lr', type=float, default=0.2)
-    parser.add_argument('--epochs', type=int, default=20)
+    parser.add_argument('--epochs', type=int, default=100)
     parser.add_argument('--batch_size', type=int, default=64)
     parser.add_argument('--seed', type=int, default=1111, help='random seed')
     parser.add_argument('--gpu', type=str, default="1", help='GPU device id to use')

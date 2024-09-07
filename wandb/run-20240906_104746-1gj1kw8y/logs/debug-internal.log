@@ -1,4 +1,0 @@
-2024-09-06 10:47:47,253 INFO    MainThread:9788 [internal.py:wandb_internal():93] W&B internal server running at pid: 9788, started at: 2024-09-06 10:47:47.252786
-2024-09-06 10:47:47,255 INFO    WriterThread:9788 [datastore.py:open_for_write():75] open: /home/qingyi/GPU20/DeepLOB/wandb/run-20240906_104746-1gj1kw8y/run-1gj1kw8y.wandb
-2024-09-06 10:47:47,259 DEBUG   SenderThread:9788 [sender.py:send():232] send: header
-2024-09-06 10:48:26,316 WARNING MainThread:9788 [internal.py:wandb_internal():153] Internal process interrupt: 1
