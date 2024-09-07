@@ -22,7 +22,8 @@ class Data_utility(object):
         self.P = args.window
         self.h = args.horizon
         file_name = file_name
-        self.rawdat = np.load(file_name)[0:5000]
+        start_time, end_time = self.get_prediction_interval(args.model)
+        self.rawdat = np.load(file_name)[start_time:end_time]
         # self.rawdat = self.rawdat
         self.n, self.m = self.rawdat.shape[0], self.rawdat.shape[1]-1
 
@@ -53,9 +54,22 @@ class Data_utility(object):
         self.train = self._batchify(train_set)
         self.valid = self._batchify(valid_set)
         self.test = self._batchify(test_set)
+    def get_prediction_interval(self, model_name, length = 2000):
+        # 定义每个模型对应的预测区间
+        model_intervals = {
+            "CNN": (length*4, length*5),
+            "GRU": (length, length*2),
+            "Attention": (length*2, length*3),
+            "preTCN": (length*3, length*4),
+            "FuturesNet": (0, length),
+        }
+        if model_name in model_intervals:
+            start_time, end_time = model_intervals[model_name]
+            return start_time, end_time
+        else:
+            raise ValueError(f"Model '{model_name}' not supported. Choose from {list(model_intervals.keys())}.")
 
     def _batchify(self, idx_set):
-
         n = len(idx_set)
         X = torch.zeros((n, self.P, self.m), device=self.device)
         Y = torch.zeros((n, 1), device=self.device)

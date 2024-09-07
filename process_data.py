@@ -19,15 +19,15 @@ def load_data(year, id):
     word = word.dropna()
 
     raw_data = word['FCLOSE']
-    feature = word[['OPEN', 'CLOSE', 'HIGH', 'LOW', 'VOL',
-                    'FOPEN', 'FCLOSE', 'FHIGH', 'FLOW', 'FVOL']].values.astype(float)
+    feature = word[['OPEN', 'CLOSE', 'HIGH', 'LOW', 'VOL', 'FOPEN', 'FCLOSE', 'FHIGH', 'FLOW', 'FVOL']].values.astype(float)
     word, raw_time = word['FCLOSE'].to_numpy(), word['DATE'].to_numpy()
 
-    # 根据 year 设置 start_time 和 end_time
     if year == 2020:
         start_time, end_time = 256600, 315000
     elif year == 2021:
         start_time, end_time = 315000, 373000
+    elif year == 2022:
+        start_time, end_time = 373000, 400000
     else:
         raise ValueError(f"Invalid year: {year}")
 
@@ -59,6 +59,7 @@ def load_data(year, id):
 
 
 if __name__ == "__main__":
+    # year, id = 2022, 50
     year = int(sys.argv[1])
     id = int(sys.argv[2])
     load_data(year, id)

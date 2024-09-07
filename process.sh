@@ -3,7 +3,7 @@
 # 并行执行批量任务的shell脚本
 # year: 2020 or 2021
 # id: 50, 300, 500
-
+# ./process.sh 2020 "50 300 500"
 # 传入的参数
 YEAR=$1
 IDS=$2  # ID 列表，可以是以空格分隔的多个 ID 值
@@ -25,3 +25,5 @@ done
 
 wait
 echo "All processes completed."
+
+

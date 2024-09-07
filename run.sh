@@ -36,3 +36,21 @@ do
 done
 
 echo "All processes completed."
+
+# bash run.sh "2020" "50" "CNN GRU Attention preTCN FuturesNet" "1 2 3 4 5"
+# bash run.sh "2020" "300" "CNN GRU Attention preTCN FuturesNet" "1 2 3 4 5"
+# bash run.sh "2020" "500" "CNN GRU Attention preTCN FuturesNet" "1 2 3 4 5"
+
+# bash run.sh "2021" "300" "CNN GRU Attention preTCN FuturesNet" "1 2 3 4 5"
+# bash run.sh "2021" "50" "CNN GRU Attention preTCN FuturesNet" "1 2 3 4 5"
+# bash run.sh "2021" "500" "CNN GRU Attention preTCN FuturesNet" "1 2 3 4 5"
+
+# bash run.sh "2022" "50" "CNN GRU Attention preTCN FuturesNet" "1 2 3 4 5"
+# bash run.sh "2022" "300" "CNN GRU Attention preTCN FuturesNet" "1 2 3 4 5"
+# bash run.sh "2022" "500" "CNN GRU Attention preTCN FuturesNet" "1 2 3 4 5"
+
+# bash run.sh "2022" "50" "CNN GRU Attention" "0 1 2"
+# bash run.sh "2022" "300" "CNN GRU Attention" "0 1 2"
+# bash run.sh "2022" "500" "CNN GRU Attention" "0 1 2"
+
+

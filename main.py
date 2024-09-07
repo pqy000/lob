@@ -21,7 +21,7 @@ def get_args():
     parser = argparse.ArgumentParser(description='PyTorch Time series forecasting')
     parser.add_argument('--id', type=int, default=300, help='location of the data file')
     parser.add_argument('--year', type=int, default=2020, help='location of the data file')
-    parser.add_argument('--model', type=str, default='FuturesNet', help='')
+    parser.add_argument('--model', type=str, default='preTCN', help='')
     parser.add_argument('--window', type=int, default=16, help='window size')
     parser.add_argument('--horizon', type=int, default=1)
     parser.add_argument('--normalize', type=int, default=2)
@@ -38,7 +38,7 @@ def get_args():
     parser.add_argument('--lr', type=float, default=0.2)
     parser.add_argument('--epochs', type=int, default=100)
     parser.add_argument('--batch_size', type=int, default=64)
-    parser.add_argument('--seed', type=int, default=1111, help='random seed')
+    parser.add_argument('--seed', type=int, default=0, help='random seed')
     parser.add_argument('--gpu', type=str, default="1", help='GPU device id to use')
     parser.add_argument('--model_path', type=str, default='./save', help='path to save checkpoints (default: None)')
     parser.add_argument('--patience', type=int, default=50, help='model path')
@@ -50,7 +50,7 @@ def get_args():
     parser.add_argument('--momentum', type=float, default=0.9)
     parser.add_argument('--label_smoothing', type=bool, default=False, help='smoothing')
     parser.add_argument('--smoothing', type=float, default=0.08, help='smoothing')
-
+    # parser.add_argument('--length', type=int, default=5000, help='smoothing')
     return parser.parse_args()
 
 def main():
@@ -65,6 +65,7 @@ def main():
 
     file_name = "newdata/" + str(args.id) + "_" + str(args.year) + ".npy"
     print(file_name)
+    print(str(args.seed))
     Data = Data_utility(file_name, 0.6, 0.2, device, args)
     wandb.init(project="futures"+str(args.id), mode="online", config=args, group=str(args.year), name=args.model)
     args.wb = wandb
@@ -77,7 +78,7 @@ def main():
 
     optim = makeOptimizer(model.parameters(), args)
     early_stopping_hnn = EarlyStopping(patience=args.patience,  delta=args.delta, verbose=args.verbose)
-    weight = [0.2, 0.2, 0.2, 0.2, 0.2]
+    weight = [0.3, 0.1, 0.1, 0.2, 0.3]
     class_weights = torch.FloatTensor(weight).cuda()
     criterion = nn.CrossEntropyLoss(weight = class_weights).to(device)
 

@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "process_data.py", line 65, in <module>
+    load_data(year, id)
+  File "process_data.py", line 15, in load_data
+    raise ValueError(f"Invalid id: {id}")
+ValueError: Invalid id: 5000
