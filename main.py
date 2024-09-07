@@ -9,7 +9,7 @@ import warnings
 warnings.filterwarnings("ignore")
 from utils import Data_utility, makeOptimizer
 from tqdm import tqdm
-from models import lob, LSTNet, FuturesNet, CNN, GRU, Attention, preTCN
+from models import lob, LSTNet, FuturesNet, CNN, GRU, Attention, Inception
 from trainer import origin_train, origin_eval, evaluation, calibration_train, calibration_val
 from utils import EarlyStopping, save_model, load_model, RescaledSaliency
 from pathlib import Path
@@ -21,7 +21,7 @@ def get_args():
     parser = argparse.ArgumentParser(description='PyTorch Time series forecasting')
     parser.add_argument('--id', type=int, default=300, help='location of the data file')
     parser.add_argument('--year', type=int, default=2020, help='location of the data file')
-    parser.add_argument('--model', type=str, default='preTCN', help='')
+    parser.add_argument('--model', type=str, default='FuturesNet', help='')
     parser.add_argument('--window', type=int, default=16, help='window size')
     parser.add_argument('--horizon', type=int, default=1)
     parser.add_argument('--normalize', type=int, default=2)

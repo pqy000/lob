@@ -54,14 +54,14 @@ class Data_utility(object):
         self.train = self._batchify(train_set)
         self.valid = self._batchify(valid_set)
         self.test = self._batchify(test_set)
-    def get_prediction_interval(self, model_name, length = 2000):
+    def get_prediction_interval(self, model_name, length = 1000):
         # 定义每个模型对应的预测区间
         model_intervals = {
-            "CNN": (length*4, length*5),
-            "GRU": (length, length*2),
+            "CNN": (length*2, length*3),
+            "GRU": (length*3, length*4),
             "Attention": (length*2, length*3),
-            "preTCN": (length*3, length*4),
-            "FuturesNet": (0, length),
+            "Inception": (length*3, length*4),
+            "FuturesNet": (length*4, length*5),
         }
         if model_name in model_intervals:
             start_time, end_time = model_intervals[model_name]

@@ -1,0 +1,165 @@
+wandb: Currently logged in as: pqy000 (pqythu). Use `wandb login --relogin` to force relogin
+GPU device ID: 1
+newdata/300_2022.npy
+0
+2024-09-07 12:09:30.662981: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+wandb: wandb version 0.17.9 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.12.17
+wandb: Run data is saved locally in /home/qingyi/GPU20/DeepLOB/wandb/run-20240907_120924-124tqy7y
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run GRU
+wandb: ⭐️ View project at https://wandb.ai/pqythu/futures300
+wandb: 🚀 View run at https://wandb.ai/pqythu/futures300/runs/124tqy7y
+2024-09-07 12:09:31.641272: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/cudnn/lib64:/usr/local/cuda/lib64
+2024-09-07 12:09:31.641380: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/cudnn/lib64:/usr/local/cuda/lib64
+2024-09-07 12:09:31.641393: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+Model(
+  (rnn): GRU(10, 64, batch_first=True)
+  (fc): Linear(in_features=64, out_features=5, bias=True)
+)
+number of parameters: 14917
+Training start
+epoch  1 | time used:  1.00s | train_loss 1.502 | valid loss 1.418 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch  2 | time used:  0.12s | train_loss 1.495 | valid loss 1.481 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+epoch  3 | time used:  0.13s | train_loss 1.528 | valid loss 1.481 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+epoch  4 | time used:  0.15s | train_loss 1.514 | valid loss 1.418 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch  5 | time used:  0.15s | train_loss 1.488 | valid loss 1.418 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch  6 | time used:  0.13s | train_loss 1.491 | valid loss 1.417 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch  7 | time used:  0.06s | train_loss 1.521 | valid loss 1.481 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+epoch  8 | time used:  0.08s | train_loss 1.526 | valid loss 1.481 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+epoch  9 | time used:  0.09s | train_loss 1.516 | valid loss 1.481 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+epoch 10 | time used:  0.09s | train_loss 1.671 | valid loss 1.418 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+saving the model to ./save/2022_300/GRU/checkpoint10.pt
+epoch 11 | time used:  0.09s | train_loss 1.554 | valid loss 1.418 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch 12 | time used:  0.08s | train_loss 1.499 | valid loss 1.418 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch 13 | time used:  0.08s | train_loss 1.494 | valid loss 1.418 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch 14 | time used:  0.08s | train_loss 1.489 | valid loss 1.418 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch 15 | time used:  0.14s | train_loss 1.488 | valid loss 1.418 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch 16 | time used:  0.08s | train_loss 1.496 | valid loss 1.418 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch 17 | time used:  0.08s | train_loss 1.527 | valid loss 1.842 | valid acc 0.052 | mae 1.630 | mse 3.635 | rmse 1.91 | r2 -0.14 | sharp 1.51
+epoch 18 | time used:  0.08s | train_loss 1.582 | valid loss 1.481 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+epoch 19 | time used:  0.08s | train_loss 1.598 | valid loss 1.418 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch 20 | time used:  0.08s | train_loss 1.486 | valid loss 1.418 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+saving the model to ./save/2022_300/GRU/checkpoint20.pt
+epoch 21 | time used:  0.08s | train_loss 1.547 | valid loss 1.481 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+epoch 22 | time used:  0.09s | train_loss 1.527 | valid loss 1.481 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+epoch 23 | time used:  0.07s | train_loss 1.526 | valid loss 1.481 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+epoch 24 | time used:  0.08s | train_loss 1.529 | valid loss 1.481 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+epoch 25 | time used:  0.08s | train_loss 1.515 | valid loss 1.418 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch 26 | time used:  0.08s | train_loss 1.496 | valid loss 1.417 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch 27 | time used:  0.09s | train_loss 1.536 | valid loss 1.481 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+epoch 28 | time used:  0.09s | train_loss 1.525 | valid loss 1.481 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+epoch 29 | time used:  0.09s | train_loss 1.507 | valid loss 1.418 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch 30 | time used:  0.08s | train_loss 1.491 | valid loss 1.418 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+saving the model to ./save/2022_300/GRU/checkpoint30.pt
+epoch 31 | time used:  0.09s | train_loss 1.488 | valid loss 1.418 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch 32 | time used:  0.10s | train_loss 1.495 | valid loss 1.419 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch 33 | time used:  0.09s | train_loss 1.495 | valid loss 1.418 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch 34 | time used:  0.09s | train_loss 1.492 | valid loss 1.418 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch 35 | time used:  0.09s | train_loss 1.492 | valid loss 1.417 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch 36 | time used:  0.11s | train_loss 1.531 | valid loss 1.481 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+epoch 37 | time used:  0.10s | train_loss 1.524 | valid loss 1.481 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+epoch 38 | time used:  0.10s | train_loss 1.521 | valid loss 1.480 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+epoch 39 | time used:  0.10s | train_loss 1.530 | valid loss 1.481 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+epoch 40 | time used:  0.10s | train_loss 1.529 | valid loss 1.481 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+saving the model to ./save/2022_300/GRU/checkpoint40.pt
+epoch 41 | time used:  0.11s | train_loss 1.551 | valid loss 1.418 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch 42 | time used:  0.11s | train_loss 1.522 | valid loss 1.481 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+epoch 43 | time used:  0.11s | train_loss 1.529 | valid loss 1.418 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch 44 | time used:  0.08s | train_loss 1.488 | valid loss 1.419 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch 45 | time used:  0.09s | train_loss 1.504 | valid loss 1.481 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+epoch 46 | time used:  0.14s | train_loss 1.527 | valid loss 1.481 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+epoch 47 | time used:  0.10s | train_loss 1.528 | valid loss 1.483 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+epoch 48 | time used:  0.09s | train_loss 1.523 | valid loss 1.418 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch 49 | time used:  0.09s | train_loss 1.507 | valid loss 1.481 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+epoch 50 | time used:  0.10s | train_loss 1.545 | valid loss 1.481 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+saving the model to ./save/2022_300/GRU/checkpoint50.pt
+epoch 51 | time used:  0.10s | train_loss 1.524 | valid loss 1.481 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+epoch 52 | time used:  0.10s | train_loss 1.525 | valid loss 1.480 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+epoch 53 | time used:  0.13s | train_loss 1.512 | valid loss 1.481 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+epoch 54 | time used:  0.10s | train_loss 1.530 | valid loss 1.481 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+epoch 55 | time used:  0.08s | train_loss 1.531 | valid loss 1.482 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+epoch 56 | time used:  0.08s | train_loss 1.488 | valid loss 1.418 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch 57 | time used:  0.11s | train_loss 1.491 | valid loss 1.418 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch 58 | time used:  0.11s | train_loss 1.490 | valid loss 1.421 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch 59 | time used:  0.16s | train_loss 1.510 | valid loss 1.418 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch 60 | time used:  0.10s | train_loss 1.496 | valid loss 1.418 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+saving the model to ./save/2022_300/GRU/checkpoint60.pt
+epoch 61 | time used:  0.09s | train_loss 1.491 | valid loss 1.414 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch 62 | time used:  0.09s | train_loss 1.524 | valid loss 1.484 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+epoch 63 | time used:  0.07s | train_loss 1.532 | valid loss 1.481 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+epoch 64 | time used:  0.09s | train_loss 1.528 | valid loss 1.483 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+epoch 65 | time used:  0.10s | train_loss 1.497 | valid loss 1.481 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+epoch 66 | time used:  0.09s | train_loss 1.529 | valid loss 1.481 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+epoch 67 | time used:  0.08s | train_loss 1.529 | valid loss 1.483 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+epoch 68 | time used:  0.08s | train_loss 1.518 | valid loss 1.418 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch 69 | time used:  0.11s | train_loss 1.491 | valid loss 1.418 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch 70 | time used:  0.07s | train_loss 1.492 | valid loss 1.421 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+saving the model to ./save/2022_300/GRU/checkpoint70.pt
+epoch 71 | time used:  0.10s | train_loss 1.495 | valid loss 1.473 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+epoch 72 | time used:  0.10s | train_loss 1.483 | valid loss 1.418 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch 73 | time used:  0.10s | train_loss 1.491 | valid loss 1.418 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch 74 | time used:  0.10s | train_loss 1.490 | valid loss 1.414 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch 75 | time used:  0.11s | train_loss 1.504 | valid loss 1.418 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch 76 | time used:  0.11s | train_loss 1.486 | valid loss 1.418 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch 77 | time used:  0.10s | train_loss 1.488 | valid loss 1.419 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch 78 | time used:  0.11s | train_loss 1.495 | valid loss 1.481 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+epoch 79 | time used:  0.11s | train_loss 1.534 | valid loss 1.481 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+epoch 80 | time used:  0.11s | train_loss 1.530 | valid loss 1.482 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+saving the model to ./save/2022_300/GRU/checkpoint80.pt
+epoch 81 | time used:  0.11s | train_loss 1.490 | valid loss 1.418 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch 82 | time used:  0.10s | train_loss 1.494 | valid loss 1.418 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch 83 | time used:  0.12s | train_loss 1.493 | valid loss 1.411 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch 84 | time used:  0.11s | train_loss 1.515 | valid loss 1.481 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+epoch 85 | time used:  0.11s | train_loss 1.526 | valid loss 1.481 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+epoch 86 | time used:  0.11s | train_loss 1.528 | valid loss 1.519 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch 87 | time used:  0.13s | train_loss 1.494 | valid loss 1.418 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch 88 | time used:  0.13s | train_loss 1.487 | valid loss 1.419 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch 89 | time used:  0.11s | train_loss 1.489 | valid loss 1.481 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+epoch 90 | time used:  0.10s | train_loss 1.526 | valid loss 1.482 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+saving the model to ./save/2022_300/GRU/checkpoint90.pt
+epoch 91 | time used:  0.10s | train_loss 1.529 | valid loss 1.481 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+epoch 92 | time used:  0.09s | train_loss 1.486 | valid loss 1.418 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch 93 | time used:  0.09s | train_loss 1.495 | valid loss 1.418 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch 94 | time used:  0.09s | train_loss 1.487 | valid loss 1.416 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch 95 | time used:  0.09s | train_loss 1.496 | valid loss 1.418 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch 96 | time used:  0.09s | train_loss 1.493 | valid loss 1.418 | valid acc 0.480 | mae 1.670 | mse 5.975 | rmse 2.44 | r2 -0.88 | sharp 1.51
+epoch 97 | time used:  0.09s | train_loss 1.491 | valid loss 1.429 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+epoch 98 | time used:  0.10s | train_loss 1.531 | valid loss 1.481 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+epoch 99 | time used:  0.10s | train_loss 1.528 | valid loss 1.481 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+epoch 100 | time used:  0.08s | train_loss 1.531 | valid loss 1.481 | valid acc 0.320 | mae 2.330 | mse 8.615 | rmse 2.94 | r2 -1.70 | sharp 0.00
+saving the model to ./save/2022_300/GRU/checkpoint100.pt
+wandb: Waiting for W&B process to finish... (success).
+wandb: - 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: \ 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: | 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: / 0.001 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: - 0.001 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: \ 0.001 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: | 0.001 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: / 0.001 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: - 0.001 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: \ 0.001 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: | 0.001 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: / 0.001 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: - 0.001 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: \ 0.001 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: | 0.001 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: / 0.002 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: - 0.002 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: \ 0.025 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: | 0.025 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: / 0.025 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: - 0.030 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: \ 0.030 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: | 0.030 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: / 0.030 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: - 0.030 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: \ 0.030 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: | 0.030 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: / 0.030 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: - 0.030 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: \ 0.030 MB of 0.030 MB uploaded (0.000 MB deduped)wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:         best_acc ▁
+wandb:            epoch ▁
+wandb:              mae ▁█▁█▁▁▁███▁▁▁▁███▁████▁▁███▁▁▁▁▁▁█▁█▁▁█▁
+wandb:              mse ▁█▁█▁▁▁███▁▁▁▁███▁████▁▁███▁▁▁▁▁▁█▁█▁▁█▁
+wandb:               r2 █▁█▁███▁▁▁████▁▁▁█▁▁▁▁██▁▁▁██████▁█▁██▁█
+wandb:             rmse ▁█▁█▁▁▁███▁▁▁▁███▁████▁▁███▁▁▁▁▁▁█▁█▁▁█▁
+wandb:      sharp_value █▁█▁███▁▁▁████▁▁▁█▁▁▁▁██▁▁▁██████▁█▁██▁█
+wandb: train_batch_loss ▂▂▄▁█▂▄▃▅▄▅▅▃▄▃▂▃▂▂▄▄▃▃▃▃▃▃▃▂▄▂▅▅▃▂▅▃▂▂▃
+wandb:       train_loss ▂▄▂▄▆▂▂█▆▄▂▄▁▂▄▄▆▁▄▃▄▄▁▃▂▄▄▂▁▂▁▅▂▃▂▁▁▁▂▄
+wandb:          val_acc █▁█▁███▁▁▁█▁██▁▁██▁▁▁▁███▁▁████▁█▁█▁██▁▁
+wandb:         val_loss ▂█▂█▂▂▂███▂▂▂▂███▂████▂▂███▂▂▂▂█▁█▂█▂▂█▂
+wandb: 
+wandb: Run summary:
+wandb:         best_acc 0.48
+wandb:            epoch 1
+wandb:              mae 1.67
+wandb:              mse 5.975
+wandb:               r2 -0.87533
+wandb:             rmse 2.44438
+wandb:      sharp_value 1.50683
+wandb: train_batch_loss 1.56198
+wandb:       train_loss 1.53142
+wandb:          val_acc 0.32
+wandb:         val_loss 1.41801
+wandb: 
+wandb: Synced GRU: https://wandb.ai/pqythu/futures300/runs/124tqy7y
+wandb: Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20240907_120924-124tqy7y/logs

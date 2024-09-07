@@ -1,0 +1,343 @@
+wandb: Currently logged in as: pqy000 (pqythu). Use `wandb login --relogin` to force relogin
+GPU device ID: 3
+newdata/300_2021.npy
+0
+2024-09-07 16:25:20.243158: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-09-07 16:25:21.243090: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/cudnn/lib64:/usr/local/cuda/lib64
+2024-09-07 16:25:21.243190: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/cudnn/lib64:/usr/local/cuda/lib64
+2024-09-07 16:25:21.243203: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+wandb: wandb version 0.17.9 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.12.17
+wandb: Run data is saved locally in /home/qingyi/GPU20/DeepLOB/wandb/run-20240907_162517-s50vabd3
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Inception
+wandb: ⭐️ View project at https://wandb.ai/pqythu/futures300
+wandb: 🚀 View run at https://wandb.ai/pqythu/futures300/runs/s50vabd3
+Model(
+  (feature_extractor): InceptionTimePlus(
+    (backbone): Sequential(
+      (0): InceptionBlockPlus(
+        (inception): ModuleList(
+          (0): InceptionModulePlus(
+            (bottleneck): ConvBlock(
+              (0): Conv1d(10, 32, kernel_size=(1,), stride=(1,), bias=False)
+            )
+            (convs): ModuleList(
+              (0): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(39,), stride=(1,), padding=(19,), bias=False)
+              )
+              (1): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(19,), stride=(1,), padding=(9,), bias=False)
+              )
+              (2): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(9,), stride=(1,), padding=(4,), bias=False)
+              )
+            )
+            (mp_conv): Sequential(
+              (0): MaxPool1d(kernel_size=3, stride=1, padding=1, dilation=1, ceil_mode=False)
+              (1): ConvBlock(
+                (0): Conv1d(10, 32, kernel_size=(1,), stride=(1,), bias=False)
+              )
+            )
+            (concat): Concat(dim=1)
+            (norm): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (act): ReLU()
+          )
+          (1): InceptionModulePlus(
+            (bottleneck): ConvBlock(
+              (0): Conv1d(128, 32, kernel_size=(1,), stride=(1,), bias=False)
+            )
+            (convs): ModuleList(
+              (0): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(39,), stride=(1,), padding=(19,), bias=False)
+              )
+              (1): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(19,), stride=(1,), padding=(9,), bias=False)
+              )
+              (2): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(9,), stride=(1,), padding=(4,), bias=False)
+              )
+            )
+            (mp_conv): Sequential(
+              (0): MaxPool1d(kernel_size=3, stride=1, padding=1, dilation=1, ceil_mode=False)
+              (1): ConvBlock(
+                (0): Conv1d(128, 32, kernel_size=(1,), stride=(1,), bias=False)
+              )
+            )
+            (concat): Concat(dim=1)
+            (norm): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (act): ReLU()
+          )
+          (2): InceptionModulePlus(
+            (bottleneck): ConvBlock(
+              (0): Conv1d(128, 32, kernel_size=(1,), stride=(1,), bias=False)
+            )
+            (convs): ModuleList(
+              (0): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(39,), stride=(1,), padding=(19,), bias=False)
+              )
+              (1): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(19,), stride=(1,), padding=(9,), bias=False)
+              )
+              (2): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(9,), stride=(1,), padding=(4,), bias=False)
+              )
+            )
+            (mp_conv): Sequential(
+              (0): MaxPool1d(kernel_size=3, stride=1, padding=1, dilation=1, ceil_mode=False)
+              (1): ConvBlock(
+                (0): Conv1d(128, 32, kernel_size=(1,), stride=(1,), bias=False)
+              )
+            )
+            (concat): Concat(dim=1)
+            (norm): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (3): InceptionModulePlus(
+            (bottleneck): ConvBlock(
+              (0): Conv1d(128, 32, kernel_size=(1,), stride=(1,), bias=False)
+            )
+            (convs): ModuleList(
+              (0): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(39,), stride=(1,), padding=(19,), bias=False)
+              )
+              (1): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(19,), stride=(1,), padding=(9,), bias=False)
+              )
+              (2): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(9,), stride=(1,), padding=(4,), bias=False)
+              )
+            )
+            (mp_conv): Sequential(
+              (0): MaxPool1d(kernel_size=3, stride=1, padding=1, dilation=1, ceil_mode=False)
+              (1): ConvBlock(
+                (0): Conv1d(128, 32, kernel_size=(1,), stride=(1,), bias=False)
+              )
+            )
+            (concat): Concat(dim=1)
+            (norm): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (act): ReLU()
+          )
+          (4): InceptionModulePlus(
+            (bottleneck): ConvBlock(
+              (0): Conv1d(128, 32, kernel_size=(1,), stride=(1,), bias=False)
+            )
+            (convs): ModuleList(
+              (0): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(39,), stride=(1,), padding=(19,), bias=False)
+              )
+              (1): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(19,), stride=(1,), padding=(9,), bias=False)
+              )
+              (2): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(9,), stride=(1,), padding=(4,), bias=False)
+              )
+            )
+            (mp_conv): Sequential(
+              (0): MaxPool1d(kernel_size=3, stride=1, padding=1, dilation=1, ceil_mode=False)
+              (1): ConvBlock(
+                (0): Conv1d(128, 32, kernel_size=(1,), stride=(1,), bias=False)
+              )
+            )
+            (concat): Concat(dim=1)
+            (norm): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (act): ReLU()
+          )
+          (5): InceptionModulePlus(
+            (bottleneck): ConvBlock(
+              (0): Conv1d(128, 32, kernel_size=(1,), stride=(1,), bias=False)
+            )
+            (convs): ModuleList(
+              (0): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(39,), stride=(1,), padding=(19,), bias=False)
+              )
+              (1): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(19,), stride=(1,), padding=(9,), bias=False)
+              )
+              (2): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(9,), stride=(1,), padding=(4,), bias=False)
+              )
+            )
+            (mp_conv): Sequential(
+              (0): MaxPool1d(kernel_size=3, stride=1, padding=1, dilation=1, ceil_mode=False)
+              (1): ConvBlock(
+                (0): Conv1d(128, 32, kernel_size=(1,), stride=(1,), bias=False)
+              )
+            )
+            (concat): Concat(dim=1)
+            (norm): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (shortcut): ModuleList(
+          (0): ConvBlock(
+            (0): Conv1d(10, 128, kernel_size=(1,), stride=(1,), bias=False)
+            (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (act): ModuleList(
+          (0): ReLU()
+          (1): ReLU()
+        )
+        (add): Add
+      )
+    )
+    (head): Sequential(
+      (0): Sequential(
+        (0): GAP1d(
+          (gap): AdaptiveAvgPool1d(output_size=1)
+          (flatten): Reshape(bs)
+        )
+        (1): LinBnDrop(
+          (0): Linear(in_features=128, out_features=5, bias=True)
+        )
+      )
+    )
+  )
+  (fc): Linear(in_features=5, out_features=5, bias=True)
+)
+number of parameters: 457251
+Training start
+epoch  1 | time used:  1.89s | train_loss 1.536 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch  2 | time used:  0.28s | train_loss 1.494 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch  3 | time used:  0.28s | train_loss 1.486 | valid loss 1.618 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch  4 | time used:  0.30s | train_loss 1.484 | valid loss 1.392 | valid acc 0.380 | mae 1.645 | mse 5.115 | rmse 2.26 | r2 -1.12 | sharp 0.36
+epoch  5 | time used:  0.24s | train_loss 1.453 | valid loss 1.392 | valid acc 0.380 | mae 1.645 | mse 5.115 | rmse 2.26 | r2 -1.12 | sharp 0.36
+epoch  6 | time used:  0.28s | train_loss 1.448 | valid loss 1.393 | valid acc 0.380 | mae 1.645 | mse 5.115 | rmse 2.26 | r2 -1.12 | sharp 0.36
+epoch  7 | time used:  0.32s | train_loss 1.474 | valid loss 1.393 | valid acc 0.380 | mae 1.645 | mse 5.115 | rmse 2.26 | r2 -1.12 | sharp 0.36
+epoch  8 | time used:  0.30s | train_loss 1.453 | valid loss 1.393 | valid acc 0.380 | mae 1.645 | mse 5.115 | rmse 2.26 | r2 -1.12 | sharp 0.36
+epoch  9 | time used:  0.40s | train_loss 1.442 | valid loss 1.392 | valid acc 0.380 | mae 1.645 | mse 5.115 | rmse 2.26 | r2 -1.12 | sharp 0.36
+epoch 10 | time used:  0.34s | train_loss 1.463 | valid loss 1.393 | valid acc 0.380 | mae 1.645 | mse 5.115 | rmse 2.26 | r2 -1.12 | sharp 0.36
+saving the model to ./save/2021_300/Inception/checkpoint10.pt
+epoch 11 | time used:  0.29s | train_loss 1.456 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 12 | time used:  0.31s | train_loss 1.473 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 13 | time used:  0.30s | train_loss 1.469 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 14 | time used:  0.31s | train_loss 1.478 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 15 | time used:  0.30s | train_loss 1.526 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 16 | time used:  0.29s | train_loss 1.466 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 17 | time used:  0.29s | train_loss 1.524 | valid loss 1.620 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 18 | time used:  0.29s | train_loss 1.464 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 19 | time used:  0.29s | train_loss 1.501 | valid loss 1.621 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 20 | time used:  0.28s | train_loss 1.495 | valid loss 1.621 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+saving the model to ./save/2021_300/Inception/checkpoint20.pt
+epoch 21 | time used:  0.29s | train_loss 1.466 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 22 | time used:  0.29s | train_loss 1.485 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 23 | time used:  0.30s | train_loss 1.472 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 24 | time used:  0.30s | train_loss 1.482 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 25 | time used:  0.31s | train_loss 1.470 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 26 | time used:  0.29s | train_loss 1.502 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 27 | time used:  0.28s | train_loss 1.474 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 28 | time used:  0.29s | train_loss 1.477 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 29 | time used:  0.36s | train_loss 1.497 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 30 | time used:  0.31s | train_loss 1.493 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+saving the model to ./save/2021_300/Inception/checkpoint30.pt
+epoch 31 | time used:  0.33s | train_loss 1.472 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 32 | time used:  0.29s | train_loss 1.496 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 33 | time used:  0.28s | train_loss 1.479 | valid loss 1.621 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 34 | time used:  0.29s | train_loss 1.464 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 35 | time used:  0.29s | train_loss 1.500 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 36 | time used:  0.30s | train_loss 1.495 | valid loss 1.603 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 37 | time used:  0.30s | train_loss 1.505 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 38 | time used:  0.30s | train_loss 1.459 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 39 | time used:  0.30s | train_loss 1.498 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 40 | time used:  0.28s | train_loss 1.468 | valid loss 1.869 | valid acc 0.095 | mae 1.765 | mse 4.245 | rmse 2.06 | r2 -0.76 | sharp 0.36
+saving the model to ./save/2021_300/Inception/checkpoint40.pt
+epoch 41 | time used:  0.28s | train_loss 1.425 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 42 | time used:  0.28s | train_loss 1.495 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 43 | time used:  0.28s | train_loss 1.471 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 44 | time used:  0.28s | train_loss 1.461 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 45 | time used:  0.28s | train_loss 1.496 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 46 | time used:  0.28s | train_loss 1.500 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 47 | time used:  0.29s | train_loss 1.503 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 48 | time used:  0.30s | train_loss 1.476 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 49 | time used:  0.30s | train_loss 1.483 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 50 | time used:  0.29s | train_loss 1.510 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+saving the model to ./save/2021_300/Inception/checkpoint50.pt
+epoch 51 | time used:  0.26s | train_loss 1.510 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 52 | time used:  0.24s | train_loss 1.503 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 53 | time used:  0.26s | train_loss 1.488 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 54 | time used:  0.25s | train_loss 1.511 | valid loss 1.616 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 55 | time used:  0.25s | train_loss 1.503 | valid loss 1.453 | valid acc 0.380 | mae 1.645 | mse 5.115 | rmse 2.26 | r2 -1.12 | sharp 0.36
+epoch 56 | time used:  0.26s | train_loss 1.469 | valid loss 1.392 | valid acc 0.380 | mae 1.645 | mse 5.115 | rmse 2.26 | r2 -1.12 | sharp 0.36
+epoch 57 | time used:  0.25s | train_loss 1.504 | valid loss 1.392 | valid acc 0.380 | mae 1.645 | mse 5.115 | rmse 2.26 | r2 -1.12 | sharp 0.36
+epoch 58 | time used:  0.24s | train_loss 1.492 | valid loss 1.393 | valid acc 0.380 | mae 1.645 | mse 5.115 | rmse 2.26 | r2 -1.12 | sharp 0.36
+epoch 59 | time used:  0.24s | train_loss 1.482 | valid loss 1.393 | valid acc 0.380 | mae 1.645 | mse 5.115 | rmse 2.26 | r2 -1.12 | sharp 0.36
+epoch 60 | time used:  0.25s | train_loss 1.447 | valid loss 1.393 | valid acc 0.380 | mae 1.645 | mse 5.115 | rmse 2.26 | r2 -1.12 | sharp 0.36
+saving the model to ./save/2021_300/Inception/checkpoint60.pt
+epoch 61 | time used:  0.28s | train_loss 1.444 | valid loss 1.393 | valid acc 0.380 | mae 1.645 | mse 5.115 | rmse 2.26 | r2 -1.12 | sharp 0.36
+epoch 62 | time used:  0.24s | train_loss 1.474 | valid loss 1.393 | valid acc 0.380 | mae 1.645 | mse 5.115 | rmse 2.26 | r2 -1.12 | sharp 0.36
+epoch 63 | time used:  0.24s | train_loss 1.458 | valid loss 1.393 | valid acc 0.380 | mae 1.645 | mse 5.115 | rmse 2.26 | r2 -1.12 | sharp 0.36
+epoch 64 | time used:  0.27s | train_loss 1.491 | valid loss 1.395 | valid acc 0.380 | mae 1.645 | mse 5.115 | rmse 2.26 | r2 -1.12 | sharp 0.36
+epoch 65 | time used:  0.25s | train_loss 1.458 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 66 | time used:  0.25s | train_loss 1.481 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 67 | time used:  0.24s | train_loss 1.465 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 68 | time used:  0.25s | train_loss 1.497 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 69 | time used:  0.25s | train_loss 1.512 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 70 | time used:  0.25s | train_loss 1.479 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+saving the model to ./save/2021_300/Inception/checkpoint70.pt
+epoch 71 | time used:  0.26s | train_loss 1.498 | valid loss 1.620 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 72 | time used:  0.26s | train_loss 1.494 | valid loss 1.622 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 73 | time used:  0.25s | train_loss 1.447 | valid loss 1.392 | valid acc 0.380 | mae 1.645 | mse 5.115 | rmse 2.26 | r2 -1.12 | sharp 0.36
+epoch 74 | time used:  0.25s | train_loss 1.455 | valid loss 1.393 | valid acc 0.380 | mae 1.645 | mse 5.115 | rmse 2.26 | r2 -1.12 | sharp 0.36
+epoch 75 | time used:  0.25s | train_loss 1.481 | valid loss 1.393 | valid acc 0.380 | mae 1.645 | mse 5.115 | rmse 2.26 | r2 -1.12 | sharp 0.36
+epoch 76 | time used:  0.24s | train_loss 1.490 | valid loss 1.393 | valid acc 0.380 | mae 1.645 | mse 5.115 | rmse 2.26 | r2 -1.12 | sharp 0.36
+epoch 77 | time used:  0.24s | train_loss 1.469 | valid loss 1.393 | valid acc 0.380 | mae 1.645 | mse 5.115 | rmse 2.26 | r2 -1.12 | sharp 0.36
+epoch 78 | time used:  0.25s | train_loss 1.454 | valid loss 1.394 | valid acc 0.380 | mae 1.645 | mse 5.115 | rmse 2.26 | r2 -1.12 | sharp 0.36
+epoch 79 | time used:  0.26s | train_loss 1.480 | valid loss 1.392 | valid acc 0.380 | mae 1.645 | mse 5.115 | rmse 2.26 | r2 -1.12 | sharp 0.36
+epoch 80 | time used:  0.25s | train_loss 1.486 | valid loss 1.566 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+saving the model to ./save/2021_300/Inception/checkpoint80.pt
+epoch 81 | time used:  0.25s | train_loss 1.459 | valid loss 1.412 | valid acc 0.380 | mae 1.645 | mse 5.115 | rmse 2.26 | r2 -1.12 | sharp 0.36
+epoch 82 | time used:  0.25s | train_loss 1.431 | valid loss 1.600 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 83 | time used:  0.25s | train_loss 1.469 | valid loss 1.392 | valid acc 0.380 | mae 1.645 | mse 5.115 | rmse 2.26 | r2 -1.12 | sharp 0.36
+epoch 84 | time used:  0.27s | train_loss 1.468 | valid loss 1.392 | valid acc 0.380 | mae 1.645 | mse 5.115 | rmse 2.26 | r2 -1.12 | sharp 0.36
+epoch 85 | time used:  0.28s | train_loss 1.466 | valid loss 1.392 | valid acc 0.380 | mae 1.645 | mse 5.115 | rmse 2.26 | r2 -1.12 | sharp 0.36
+epoch 86 | time used:  0.29s | train_loss 1.470 | valid loss 1.392 | valid acc 0.380 | mae 1.645 | mse 5.115 | rmse 2.26 | r2 -1.12 | sharp 0.36
+epoch 87 | time used:  0.28s | train_loss 1.480 | valid loss 1.393 | valid acc 0.380 | mae 1.645 | mse 5.115 | rmse 2.26 | r2 -1.12 | sharp 0.36
+epoch 88 | time used:  0.29s | train_loss 1.462 | valid loss 1.393 | valid acc 0.380 | mae 1.645 | mse 5.115 | rmse 2.26 | r2 -1.12 | sharp 0.36
+epoch 89 | time used:  0.27s | train_loss 1.447 | valid loss 1.393 | valid acc 0.380 | mae 1.645 | mse 5.115 | rmse 2.26 | r2 -1.12 | sharp 0.36
+epoch 90 | time used:  0.25s | train_loss 1.437 | valid loss 1.393 | valid acc 0.380 | mae 1.645 | mse 5.115 | rmse 2.26 | r2 -1.12 | sharp 0.36
+saving the model to ./save/2021_300/Inception/checkpoint90.pt
+epoch 91 | time used:  0.28s | train_loss 1.467 | valid loss 1.394 | valid acc 0.380 | mae 1.645 | mse 5.115 | rmse 2.26 | r2 -1.12 | sharp 0.36
+epoch 92 | time used:  0.28s | train_loss 1.465 | valid loss 1.393 | valid acc 0.380 | mae 1.645 | mse 5.115 | rmse 2.26 | r2 -1.12 | sharp 0.36
+epoch 93 | time used:  0.29s | train_loss 1.475 | valid loss 1.393 | valid acc 0.380 | mae 1.645 | mse 5.115 | rmse 2.26 | r2 -1.12 | sharp 0.36
+epoch 94 | time used:  0.29s | train_loss 1.454 | valid loss 1.392 | valid acc 0.380 | mae 1.645 | mse 5.115 | rmse 2.26 | r2 -1.12 | sharp 0.36
+epoch 95 | time used:  0.30s | train_loss 1.468 | valid loss 1.392 | valid acc 0.380 | mae 1.645 | mse 5.115 | rmse 2.26 | r2 -1.12 | sharp 0.36
+epoch 96 | time used:  0.29s | train_loss 1.477 | valid loss 1.393 | valid acc 0.380 | mae 1.645 | mse 5.115 | rmse 2.26 | r2 -1.12 | sharp 0.36
+epoch 97 | time used:  0.29s | train_loss 1.489 | valid loss 1.478 | valid acc 0.205 | mae 2.355 | mse 7.955 | rmse 2.82 | r2 -2.30 | sharp 0.00
+epoch 98 | time used:  0.28s | train_loss 1.474 | valid loss 1.392 | valid acc 0.380 | mae 1.645 | mse 5.115 | rmse 2.26 | r2 -1.12 | sharp 0.36
+epoch 99 | time used:  0.25s | train_loss 1.435 | valid loss 1.393 | valid acc 0.380 | mae 1.645 | mse 5.115 | rmse 2.26 | r2 -1.12 | sharp 0.36
+epoch 100 | time used:  0.27s | train_loss 1.494 | valid loss 1.393 | valid acc 0.380 | mae 1.645 | mse 5.115 | rmse 2.26 | r2 -1.12 | sharp 0.36
+saving the model to ./save/2021_300/Inception/checkpoint100.pt
+wandb: Waiting for W&B process to finish... (success).
+wandb: - 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: \ 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: | 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: / 0.001 MB of 0.032 MB uploaded (0.000 MB deduped)wandb: - 0.001 MB of 0.033 MB uploaded (0.000 MB deduped)wandb: \ 0.001 MB of 0.033 MB uploaded (0.000 MB deduped)wandb: | 0.001 MB of 0.033 MB uploaded (0.000 MB deduped)wandb: / 0.001 MB of 0.033 MB uploaded (0.000 MB deduped)wandb: - 0.001 MB of 0.033 MB uploaded (0.000 MB deduped)wandb: \ 0.001 MB of 0.033 MB uploaded (0.000 MB deduped)wandb: | 0.001 MB of 0.033 MB uploaded (0.000 MB deduped)wandb: / 0.001 MB of 0.033 MB uploaded (0.000 MB deduped)wandb: - 0.001 MB of 0.033 MB uploaded (0.000 MB deduped)wandb: \ 0.001 MB of 0.033 MB uploaded (0.000 MB deduped)wandb: | 0.001 MB of 0.033 MB uploaded (0.000 MB deduped)wandb: / 0.001 MB of 0.033 MB uploaded (0.000 MB deduped)wandb: - 0.001 MB of 0.033 MB uploaded (0.000 MB deduped)wandb: \ 0.005 MB of 0.033 MB uploaded (0.000 MB deduped)wandb: | 0.033 MB of 0.033 MB uploaded (0.000 MB deduped)wandb: / 0.033 MB of 0.033 MB uploaded (0.000 MB deduped)wandb: - 0.033 MB of 0.033 MB uploaded (0.000 MB deduped)wandb: \ 0.033 MB of 0.033 MB uploaded (0.000 MB deduped)wandb: | 0.033 MB of 0.033 MB uploaded (0.000 MB deduped)wandb: / 0.033 MB of 0.033 MB uploaded (0.000 MB deduped)wandb: - 0.033 MB of 0.033 MB uploaded (0.000 MB deduped)wandb: \ 0.033 MB of 0.033 MB uploaded (0.000 MB deduped)wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:         best_acc ▁
+wandb:            epoch ▁
+wandb:              mae ██▁▁██████████████████▁▁▁████▁▁█▁▁▁▁▁▁▁▁
+wandb:              mse ██▁▁██████████████████▁▁▁████▁▁█▁▁▁▁▁▁▁▁
+wandb:               r2 ▁▁██▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁███▁▁▁▁██▁████████
+wandb:             rmse ██▁▁██████████████████▁▁▁████▁▁█▁▁▁▁▁▁▁▁
+wandb:      sharp_value ▁▁██▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁███▁▁▁▁██▁████████
+wandb: train_batch_loss ▃▅▅▃▅▄▂▄▅▅▄▃▅▅▆▄▄▁▅▅▅▅▄▅▅█▅▆▅▅▄▄▅▅▅▄▄▃▅▅
+wandb:       train_loss █▅▂▃▃▄▄▃▄▄▆▄▄▃▅▆▁▃▆▅▆▆▄▅▂▅▄▆▅▃▄▄▁▄▅▂▄▃▅▅
+wandb:          val_acc ▁▁██▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁████▁▁▁███▁█████▁█
+wandb:         val_loss ██▁▁██████████▇███████▁▁▁████▁▁▆▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:         best_acc 0.38
+wandb:            epoch 4
+wandb:              mae 1.645
+wandb:              mse 5.115
+wandb:               r2 -1.12331
+wandb:             rmse 2.26164
+wandb:      sharp_value 0.36481
+wandb: train_batch_loss 1.73817
+wandb:       train_loss 1.49364
+wandb:          val_acc 0.38
+wandb:         val_loss 1.3925
+wandb: 
+wandb: Synced Inception: https://wandb.ai/pqythu/futures300/runs/s50vabd3
+wandb: Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20240907_162517-s50vabd3/logs

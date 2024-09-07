@@ -2,19 +2,19 @@ wandb: Currently logged in as: pqy000 (pqythu). Use `wandb login --relogin` to f
 GPU device ID: 1
 newdata/50_2021.npy
 0
-2024-09-07 11:22:33.471421: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+2024-09-07 12:05:19.655966: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
 To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
-2024-09-07 11:22:34.491959: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/cudnn/lib64:/usr/local/cuda/lib64
-2024-09-07 11:22:34.492056: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/cudnn/lib64:/usr/local/cuda/lib64
-2024-09-07 11:22:34.492069: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+2024-09-07 12:05:21.029693: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/cudnn/lib64:/usr/local/cuda/lib64
+2024-09-07 12:05:21.029842: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/cudnn/lib64:/usr/local/cuda/lib64
+2024-09-07 12:05:21.029867: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
 wandb: wandb version 0.17.9 is available!  To upgrade, please run:
 wandb:  $ pip install wandb --upgrade
 wandb: Tracking run with wandb version 0.12.17
-wandb: Run data is saved locally in /home/qingyi/GPU20/DeepLOB/wandb/run-20240907_112226-28b5ssce
+wandb: Run data is saved locally in /home/qingyi/GPU20/DeepLOB/wandb/run-20240907_120509-3k7keudi
 wandb: Run `wandb offline` to turn off syncing.
 wandb: Syncing run CNN
 wandb: ⭐️ View project at https://wandb.ai/pqythu/futures50
-wandb: 🚀 View run at https://wandb.ai/pqythu/futures50/runs/28b5ssce
+wandb: 🚀 View run at https://wandb.ai/pqythu/futures50/runs/3k7keudi
 Model(
   (conv1): Conv1d(10, 64, kernel_size=(3,), stride=(1,), padding=(1,))
   (conv2): Conv1d(64, 64, kernel_size=(3,), stride=(1,), padding=(1,))
@@ -23,97 +23,145 @@ Model(
 )
 number of parameters: 16901
 Training start
-epoch  1 | time used:  2.52s | train_loss 1.439 | valid loss 1.540 | valid acc 0.297 | mae 2.129 | mse 7.296 | rmse 2.70 | r2 -1.64 | sharp 0.00
-epoch  2 | time used:  0.16s | train_loss 1.437 | valid loss 1.445 | valid acc 0.360 | mae 1.871 | mse 6.266 | rmse 2.50 | r2 -1.27 | sharp 0.95
-epoch  3 | time used:  0.18s | train_loss 1.503 | valid loss 1.445 | valid acc 0.360 | mae 1.871 | mse 6.266 | rmse 2.50 | r2 -1.27 | sharp 0.95
-epoch  4 | time used:  0.17s | train_loss 1.439 | valid loss 1.445 | valid acc 0.360 | mae 1.871 | mse 6.266 | rmse 2.50 | r2 -1.27 | sharp 0.95
-epoch  5 | time used:  0.14s | train_loss 1.510 | valid loss 1.445 | valid acc 0.360 | mae 1.871 | mse 6.266 | rmse 2.50 | r2 -1.27 | sharp 0.95
-epoch  6 | time used:  0.14s | train_loss 1.502 | valid loss 1.445 | valid acc 0.360 | mae 1.871 | mse 6.266 | rmse 2.50 | r2 -1.27 | sharp 0.95
-epoch  7 | time used:  0.15s | train_loss 1.434 | valid loss 1.540 | valid acc 0.297 | mae 2.129 | mse 7.296 | rmse 2.70 | r2 -1.64 | sharp 0.00
-epoch  8 | time used:  0.16s | train_loss 1.426 | valid loss 1.540 | valid acc 0.297 | mae 2.129 | mse 7.296 | rmse 2.70 | r2 -1.64 | sharp 0.00
-epoch  9 | time used:  0.18s | train_loss 1.424 | valid loss 1.540 | valid acc 0.297 | mae 2.129 | mse 7.296 | rmse 2.70 | r2 -1.64 | sharp 0.00
-epoch 10 | time used:  0.18s | train_loss 1.422 | valid loss 1.540 | valid acc 0.297 | mae 2.129 | mse 7.296 | rmse 2.70 | r2 -1.64 | sharp 0.00
+epoch  1 | time used:  6.76s | train_loss 1.491 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch  2 | time used:  0.09s | train_loss 1.480 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch  3 | time used:  0.10s | train_loss 1.489 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch  4 | time used:  0.09s | train_loss 1.478 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch  5 | time used:  0.10s | train_loss 1.481 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch  6 | time used:  0.09s | train_loss 1.480 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch  7 | time used:  0.09s | train_loss 1.484 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch  8 | time used:  0.08s | train_loss 1.475 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch  9 | time used:  0.10s | train_loss 1.476 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 10 | time used:  0.08s | train_loss 1.484 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
 saving the model to ./save/2021_50/CNN/checkpoint10.pt
-epoch 11 | time used:  0.17s | train_loss 1.436 | valid loss 1.540 | valid acc 0.297 | mae 2.129 | mse 7.296 | rmse 2.70 | r2 -1.64 | sharp 0.00
-epoch 12 | time used:  0.17s | train_loss 1.424 | valid loss 1.540 | valid acc 0.297 | mae 2.129 | mse 7.296 | rmse 2.70 | r2 -1.64 | sharp 0.00
-epoch 13 | time used:  0.18s | train_loss 1.426 | valid loss 1.540 | valid acc 0.297 | mae 2.129 | mse 7.296 | rmse 2.70 | r2 -1.64 | sharp 0.00
-epoch 14 | time used:  0.14s | train_loss 1.425 | valid loss 1.540 | valid acc 0.297 | mae 2.129 | mse 7.296 | rmse 2.70 | r2 -1.64 | sharp 0.00
-epoch 15 | time used:  0.16s | train_loss 1.425 | valid loss 1.540 | valid acc 0.297 | mae 2.129 | mse 7.296 | rmse 2.70 | r2 -1.64 | sharp 0.00
-epoch 16 | time used:  0.18s | train_loss 1.468 | valid loss 1.445 | valid acc 0.360 | mae 1.871 | mse 6.266 | rmse 2.50 | r2 -1.27 | sharp 0.95
-epoch 17 | time used:  0.16s | train_loss 1.504 | valid loss 1.445 | valid acc 0.360 | mae 1.871 | mse 6.266 | rmse 2.50 | r2 -1.27 | sharp 0.95
-epoch 18 | time used:  0.23s | train_loss 1.508 | valid loss 1.445 | valid acc 0.360 | mae 1.871 | mse 6.266 | rmse 2.50 | r2 -1.27 | sharp 0.95
-epoch 19 | time used:  0.23s | train_loss 1.512 | valid loss 1.445 | valid acc 0.360 | mae 1.871 | mse 6.266 | rmse 2.50 | r2 -1.27 | sharp 0.95
-epoch 20 | time used:  0.16s | train_loss 1.509 | valid loss 1.445 | valid acc 0.360 | mae 1.871 | mse 6.266 | rmse 2.50 | r2 -1.27 | sharp 0.95
+epoch 11 | time used:  0.09s | train_loss 1.478 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 12 | time used:  0.08s | train_loss 1.482 | valid loss 1.600 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 13 | time used:  0.08s | train_loss 1.467 | valid loss 1.438 | valid acc 0.420 | mae 1.995 | mse 7.380 | rmse 2.72 | r2 -1.17 | sharp 2.34
+epoch 14 | time used:  0.09s | train_loss 1.761 | valid loss 1.873 | valid acc 0.090 | mae 1.740 | mse 3.400 | rmse 1.84 | r2 -0.00 | sharp 2.34
+epoch 15 | time used:  0.08s | train_loss 1.520 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 16 | time used:  0.10s | train_loss 1.483 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 17 | time used:  0.09s | train_loss 1.476 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 18 | time used:  0.08s | train_loss 1.483 | valid loss 1.438 | valid acc 0.420 | mae 1.995 | mse 7.380 | rmse 2.72 | r2 -1.17 | sharp 2.34
+epoch 19 | time used:  0.09s | train_loss 1.444 | valid loss 1.438 | valid acc 0.420 | mae 1.995 | mse 7.380 | rmse 2.72 | r2 -1.17 | sharp 2.34
+epoch 20 | time used:  0.10s | train_loss 1.447 | valid loss 1.438 | valid acc 0.420 | mae 1.995 | mse 7.380 | rmse 2.72 | r2 -1.17 | sharp 2.34
 saving the model to ./save/2021_50/CNN/checkpoint20.pt
-epoch 21 | time used:  0.18s | train_loss 1.505 | valid loss 1.445 | valid acc 0.360 | mae 1.871 | mse 6.266 | rmse 2.50 | r2 -1.27 | sharp 0.95
-epoch 22 | time used:  0.18s | train_loss 1.508 | valid loss 1.445 | valid acc 0.360 | mae 1.871 | mse 6.266 | rmse 2.50 | r2 -1.27 | sharp 0.95
-epoch 23 | time used:  0.18s | train_loss 1.503 | valid loss 1.445 | valid acc 0.360 | mae 1.871 | mse 6.266 | rmse 2.50 | r2 -1.27 | sharp 0.95
-epoch 24 | time used:  0.17s | train_loss 1.505 | valid loss 1.445 | valid acc 0.360 | mae 1.871 | mse 6.266 | rmse 2.50 | r2 -1.27 | sharp 0.95
-epoch 25 | time used:  0.17s | train_loss 1.509 | valid loss 1.445 | valid acc 0.360 | mae 1.871 | mse 6.266 | rmse 2.50 | r2 -1.27 | sharp 0.95
-epoch 26 | time used:  0.12s | train_loss 1.503 | valid loss 1.445 | valid acc 0.360 | mae 1.871 | mse 6.266 | rmse 2.50 | r2 -1.27 | sharp 0.95
-epoch 27 | time used:  0.13s | train_loss 1.502 | valid loss 1.445 | valid acc 0.360 | mae 1.871 | mse 6.266 | rmse 2.50 | r2 -1.27 | sharp 0.95
-epoch 28 | time used:  0.13s | train_loss 1.509 | valid loss 1.445 | valid acc 0.360 | mae 1.871 | mse 6.266 | rmse 2.50 | r2 -1.27 | sharp 0.95
-epoch 29 | time used:  0.17s | train_loss 1.505 | valid loss 1.445 | valid acc 0.360 | mae 1.871 | mse 6.266 | rmse 2.50 | r2 -1.27 | sharp 0.95
-epoch 30 | time used:  0.22s | train_loss 1.503 | valid loss 1.445 | valid acc 0.360 | mae 1.871 | mse 6.266 | rmse 2.50 | r2 -1.27 | sharp 0.95
+epoch 21 | time used:  0.08s | train_loss 1.678 | valid loss 1.883 | valid acc 0.033 | mae 1.835 | mse 4.390 | rmse 2.10 | r2 -0.29 | sharp 2.34
+epoch 22 | time used:  0.09s | train_loss 1.875 | valid loss 1.883 | valid acc 0.033 | mae 1.835 | mse 4.390 | rmse 2.10 | r2 -0.29 | sharp 2.34
+epoch 23 | time used:  0.09s | train_loss 1.729 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 24 | time used:  0.08s | train_loss 1.583 | valid loss 1.873 | valid acc 0.090 | mae 1.740 | mse 3.400 | rmse 1.84 | r2 -0.00 | sharp 2.34
+epoch 25 | time used:  0.09s | train_loss 1.854 | valid loss 1.841 | valid acc 0.033 | mae 1.835 | mse 4.390 | rmse 2.10 | r2 -0.29 | sharp 2.34
+epoch 26 | time used:  0.09s | train_loss 1.500 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 27 | time used:  0.07s | train_loss 1.475 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 28 | time used:  0.08s | train_loss 1.479 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 29 | time used:  0.08s | train_loss 1.479 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 30 | time used:  0.09s | train_loss 1.476 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
 saving the model to ./save/2021_50/CNN/checkpoint30.pt
-epoch 31 | time used:  0.19s | train_loss 1.503 | valid loss 1.445 | valid acc 0.360 | mae 1.871 | mse 6.266 | rmse 2.50 | r2 -1.27 | sharp 0.95
-epoch 32 | time used:  0.15s | train_loss 1.469 | valid loss 1.540 | valid acc 0.297 | mae 2.129 | mse 7.296 | rmse 2.70 | r2 -1.64 | sharp 0.00
-epoch 33 | time used:  0.13s | train_loss 1.425 | valid loss 1.540 | valid acc 0.297 | mae 2.129 | mse 7.296 | rmse 2.70 | r2 -1.64 | sharp 0.00
-epoch 34 | time used:  0.14s | train_loss 1.430 | valid loss 1.540 | valid acc 0.297 | mae 2.129 | mse 7.296 | rmse 2.70 | r2 -1.64 | sharp 0.00
-epoch 35 | time used:  0.15s | train_loss 1.448 | valid loss 1.540 | valid acc 0.297 | mae 2.129 | mse 7.296 | rmse 2.70 | r2 -1.64 | sharp 0.00
-epoch 36 | time used:  0.15s | train_loss 1.426 | valid loss 1.540 | valid acc 0.297 | mae 2.129 | mse 7.296 | rmse 2.70 | r2 -1.64 | sharp 0.00
-epoch 37 | time used:  0.17s | train_loss 1.423 | valid loss 1.540 | valid acc 0.297 | mae 2.129 | mse 7.296 | rmse 2.70 | r2 -1.64 | sharp 0.00
-epoch 38 | time used:  0.14s | train_loss 1.428 | valid loss 1.540 | valid acc 0.297 | mae 2.129 | mse 7.296 | rmse 2.70 | r2 -1.64 | sharp 0.00
-epoch 39 | time used:  0.13s | train_loss 1.428 | valid loss 1.540 | valid acc 0.297 | mae 2.129 | mse 7.296 | rmse 2.70 | r2 -1.64 | sharp 0.00
-epoch 40 | time used:  0.11s | train_loss 1.428 | valid loss 1.540 | valid acc 0.297 | mae 2.129 | mse 7.296 | rmse 2.70 | r2 -1.64 | sharp 0.00
+epoch 31 | time used:  0.08s | train_loss 1.548 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 32 | time used:  0.10s | train_loss 1.486 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 33 | time used:  0.09s | train_loss 1.482 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 34 | time used:  0.10s | train_loss 1.479 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 35 | time used:  0.11s | train_loss 1.481 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 36 | time used:  0.10s | train_loss 1.481 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 37 | time used:  0.09s | train_loss 1.479 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 38 | time used:  0.10s | train_loss 1.479 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 39 | time used:  0.09s | train_loss 1.479 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 40 | time used:  0.09s | train_loss 1.479 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
 saving the model to ./save/2021_50/CNN/checkpoint40.pt
-epoch 41 | time used:  0.15s | train_loss 1.424 | valid loss 1.540 | valid acc 0.297 | mae 2.129 | mse 7.296 | rmse 2.70 | r2 -1.64 | sharp 0.00
-epoch 42 | time used:  0.14s | train_loss 1.426 | valid loss 1.540 | valid acc 0.297 | mae 2.129 | mse 7.296 | rmse 2.70 | r2 -1.64 | sharp 0.00
-epoch 43 | time used:  0.12s | train_loss 1.425 | valid loss 1.540 | valid acc 0.297 | mae 2.129 | mse 7.296 | rmse 2.70 | r2 -1.64 | sharp 0.00
-epoch 44 | time used:  0.15s | train_loss 1.425 | valid loss 1.540 | valid acc 0.297 | mae 2.129 | mse 7.296 | rmse 2.70 | r2 -1.64 | sharp 0.00
-epoch 45 | time used:  0.14s | train_loss 1.428 | valid loss 1.445 | valid acc 0.360 | mae 1.871 | mse 6.266 | rmse 2.50 | r2 -1.27 | sharp 0.95
-epoch 46 | time used:  0.16s | train_loss 1.424 | valid loss 1.540 | valid acc 0.297 | mae 2.129 | mse 7.296 | rmse 2.70 | r2 -1.64 | sharp 0.00
-epoch 47 | time used:  0.14s | train_loss 1.423 | valid loss 1.540 | valid acc 0.297 | mae 2.129 | mse 7.296 | rmse 2.70 | r2 -1.64 | sharp 0.00
-epoch 48 | time used:  0.14s | train_loss 1.422 | valid loss 1.540 | valid acc 0.297 | mae 2.129 | mse 7.296 | rmse 2.70 | r2 -1.64 | sharp 0.00
-epoch 49 | time used:  0.13s | train_loss 1.600 | valid loss 1.540 | valid acc 0.297 | mae 2.129 | mse 7.296 | rmse 2.70 | r2 -1.64 | sharp 0.00
-epoch 50 | time used:  0.15s | train_loss 1.425 | valid loss 1.540 | valid acc 0.297 | mae 2.129 | mse 7.296 | rmse 2.70 | r2 -1.64 | sharp 0.00
+epoch 41 | time used:  0.09s | train_loss 1.477 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 42 | time used:  0.09s | train_loss 1.483 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 43 | time used:  0.07s | train_loss 1.481 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 44 | time used:  0.08s | train_loss 1.478 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 45 | time used:  0.08s | train_loss 1.477 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 46 | time used:  0.09s | train_loss 1.478 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 47 | time used:  0.08s | train_loss 1.483 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 48 | time used:  0.08s | train_loss 1.482 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 49 | time used:  0.08s | train_loss 1.479 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 50 | time used:  0.07s | train_loss 1.482 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
 saving the model to ./save/2021_50/CNN/checkpoint50.pt
-epoch 51 | time used:  0.14s | train_loss 1.476 | valid loss 1.445 | valid acc 0.360 | mae 1.871 | mse 6.266 | rmse 2.50 | r2 -1.27 | sharp 0.95
-epoch 52 | time used:  0.15s | train_loss 1.503 | valid loss 1.445 | valid acc 0.360 | mae 1.871 | mse 6.266 | rmse 2.50 | r2 -1.27 | sharp 0.95
-epoch 53 | time used:  0.15s | train_loss 1.660 | valid loss 1.445 | valid acc 0.360 | mae 1.871 | mse 6.266 | rmse 2.50 | r2 -1.27 | sharp 0.95
-epoch 54 | time used:  0.15s | train_loss 1.519 | valid loss 1.445 | valid acc 0.360 | mae 1.871 | mse 6.266 | rmse 2.50 | r2 -1.27 | sharp 0.95
-epoch 55 | time used:  0.20s | train_loss 1.514 | valid loss 1.445 | valid acc 0.360 | mae 1.871 | mse 6.266 | rmse 2.50 | r2 -1.27 | sharp 0.95
-epoch 56 | time used:  0.18s | train_loss 1.502 | valid loss 1.445 | valid acc 0.360 | mae 1.871 | mse 6.266 | rmse 2.50 | r2 -1.27 | sharp 0.95
-Early stopping for the phase
+epoch 51 | time used:  0.07s | train_loss 1.481 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 52 | time used:  0.08s | train_loss 1.475 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 53 | time used:  0.08s | train_loss 1.483 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 54 | time used:  0.06s | train_loss 1.480 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 55 | time used:  0.14s | train_loss 1.475 | valid loss 1.438 | valid acc 0.420 | mae 1.995 | mse 7.380 | rmse 2.72 | r2 -1.17 | sharp 2.34
+epoch 56 | time used:  0.07s | train_loss 1.480 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 57 | time used:  0.06s | train_loss 1.475 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 58 | time used:  0.08s | train_loss 1.480 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 59 | time used:  0.09s | train_loss 1.474 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 60 | time used:  0.11s | train_loss 1.485 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+saving the model to ./save/2021_50/CNN/checkpoint60.pt
+epoch 61 | time used:  0.09s | train_loss 1.480 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 62 | time used:  0.08s | train_loss 1.480 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 63 | time used:  0.08s | train_loss 1.480 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 64 | time used:  0.09s | train_loss 1.479 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 65 | time used:  0.08s | train_loss 1.481 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 66 | time used:  0.08s | train_loss 1.482 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 67 | time used:  0.09s | train_loss 1.479 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 68 | time used:  0.09s | train_loss 1.479 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 69 | time used:  0.07s | train_loss 1.479 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 70 | time used:  0.08s | train_loss 1.488 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+saving the model to ./save/2021_50/CNN/checkpoint70.pt
+epoch 71 | time used:  0.08s | train_loss 1.479 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 72 | time used:  0.08s | train_loss 1.474 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 73 | time used:  0.08s | train_loss 1.492 | valid loss 1.438 | valid acc 0.420 | mae 1.995 | mse 7.380 | rmse 2.72 | r2 -1.17 | sharp 2.34
+epoch 74 | time used:  0.08s | train_loss 1.464 | valid loss 1.438 | valid acc 0.420 | mae 1.995 | mse 7.380 | rmse 2.72 | r2 -1.17 | sharp 2.34
+epoch 75 | time used:  0.08s | train_loss 1.469 | valid loss 1.438 | valid acc 0.420 | mae 1.995 | mse 7.380 | rmse 2.72 | r2 -1.17 | sharp 2.34
+epoch 76 | time used:  0.08s | train_loss 1.487 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 77 | time used:  0.08s | train_loss 1.479 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 78 | time used:  0.07s | train_loss 1.480 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 79 | time used:  0.07s | train_loss 1.473 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 80 | time used:  0.08s | train_loss 1.483 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+saving the model to ./save/2021_50/CNN/checkpoint80.pt
+epoch 81 | time used:  0.09s | train_loss 1.476 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 82 | time used:  0.08s | train_loss 1.478 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 83 | time used:  0.09s | train_loss 1.478 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 84 | time used:  0.08s | train_loss 1.479 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 85 | time used:  0.09s | train_loss 1.478 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 86 | time used:  0.10s | train_loss 1.483 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 87 | time used:  0.09s | train_loss 1.479 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 88 | time used:  0.09s | train_loss 1.481 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 89 | time used:  0.09s | train_loss 1.479 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 90 | time used:  0.09s | train_loss 1.482 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+saving the model to ./save/2021_50/CNN/checkpoint90.pt
+epoch 91 | time used:  0.09s | train_loss 1.484 | valid loss 1.438 | valid acc 0.420 | mae 1.995 | mse 7.380 | rmse 2.72 | r2 -1.17 | sharp 2.34
+epoch 92 | time used:  0.09s | train_loss 1.438 | valid loss 1.438 | valid acc 0.420 | mae 1.995 | mse 7.380 | rmse 2.72 | r2 -1.17 | sharp 2.34
+epoch 93 | time used:  0.09s | train_loss 1.463 | valid loss 1.438 | valid acc 0.420 | mae 1.995 | mse 7.380 | rmse 2.72 | r2 -1.17 | sharp 2.34
+epoch 94 | time used:  0.08s | train_loss 1.457 | valid loss 1.441 | valid acc 0.410 | mae 2.005 | mse 7.420 | rmse 2.72 | r2 -1.18 | sharp 0.00
+epoch 95 | time used:  0.07s | train_loss 1.425 | valid loss 1.438 | valid acc 0.420 | mae 1.995 | mse 7.380 | rmse 2.72 | r2 -1.17 | sharp 2.34
+epoch 96 | time used:  0.08s | train_loss 1.446 | valid loss 1.438 | valid acc 0.420 | mae 1.995 | mse 7.380 | rmse 2.72 | r2 -1.17 | sharp 2.34
+epoch 97 | time used:  0.06s | train_loss 1.444 | valid loss 1.438 | valid acc 0.420 | mae 1.995 | mse 7.380 | rmse 2.72 | r2 -1.17 | sharp 2.34
+epoch 98 | time used:  0.07s | train_loss 1.451 | valid loss 1.438 | valid acc 0.420 | mae 1.995 | mse 7.380 | rmse 2.72 | r2 -1.17 | sharp 2.34
+epoch 99 | time used:  0.07s | train_loss 1.446 | valid loss 1.438 | valid acc 0.420 | mae 1.995 | mse 7.380 | rmse 2.72 | r2 -1.17 | sharp 2.34
+epoch 100 | time used:  0.06s | train_loss 1.448 | valid loss 1.438 | valid acc 0.420 | mae 1.995 | mse 7.380 | rmse 2.72 | r2 -1.17 | sharp 2.34
+saving the model to ./save/2021_50/CNN/checkpoint100.pt
 wandb: Waiting for W&B process to finish... (success).
-wandb: - 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: \ 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: | 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: / 0.001 MB of 0.022 MB uploaded (0.000 MB deduped)wandb: - 0.001 MB of 0.024 MB uploaded (0.000 MB deduped)wandb: \ 0.001 MB of 0.024 MB uploaded (0.000 MB deduped)wandb: | 0.001 MB of 0.024 MB uploaded (0.000 MB deduped)wandb: / 0.001 MB of 0.024 MB uploaded (0.000 MB deduped)wandb: - 0.001 MB of 0.024 MB uploaded (0.000 MB deduped)wandb: \ 0.001 MB of 0.024 MB uploaded (0.000 MB deduped)wandb: | 0.001 MB of 0.024 MB uploaded (0.000 MB deduped)wandb: / 0.001 MB of 0.024 MB uploaded (0.000 MB deduped)wandb: - 0.001 MB of 0.024 MB uploaded (0.000 MB deduped)wandb: \ 0.001 MB of 0.024 MB uploaded (0.000 MB deduped)wandb: | 0.001 MB of 0.024 MB uploaded (0.000 MB deduped)wandb: / 0.001 MB of 0.024 MB uploaded (0.000 MB deduped)wandb: - 0.014 MB of 0.024 MB uploaded (0.000 MB deduped)wandb: \ 0.024 MB of 0.024 MB uploaded (0.000 MB deduped)wandb: | 0.024 MB of 0.024 MB uploaded (0.000 MB deduped)wandb: / 0.024 MB of 0.024 MB uploaded (0.000 MB deduped)wandb: - 0.024 MB of 0.024 MB uploaded (0.000 MB deduped)wandb: \ 0.024 MB of 0.024 MB uploaded (0.000 MB deduped)wandb: | 0.024 MB of 0.024 MB uploaded (0.000 MB deduped)wandb: / 0.024 MB of 0.024 MB uploaded (0.000 MB deduped)wandb:                                                                                
+wandb: - 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: \ 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: | 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: / 0.001 MB of 0.028 MB uploaded (0.000 MB deduped)wandb: - 0.001 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: \ 0.001 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: | 0.001 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: / 0.001 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: - 0.001 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: \ 0.001 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: | 0.001 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: / 0.001 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: - 0.001 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: \ 0.001 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: | 0.001 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: / 0.001 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: - 0.001 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: \ 0.030 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: | 0.030 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: / 0.030 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: - 0.030 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: \ 0.030 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: | 0.030 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: / 0.030 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: - 0.030 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: \ 0.030 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: | 0.030 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: / 0.030 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: - 0.030 MB of 0.030 MB uploaded (0.000 MB deduped)wandb: \ 0.030 MB of 0.030 MB uploaded (0.000 MB deduped)wandb:                                                                                
 wandb: 
 wandb: Run history:
 wandb:         best_acc ▁
 wandb:            epoch ▁
-wandb:              mae █▁▁▁▁██████▁▁▁▁▁▁▁▁▁▁▁█████████▁███▁▁▁▁▁
-wandb:              mse █▁▁▁▁██████▁▁▁▁▁▁▁▁▁▁▁█████████▁███▁▁▁▁▁
-wandb:               r2 ▁████▁▁▁▁▁▁███████████▁▁▁▁▁▁▁▁▁█▁▁▁█████
-wandb:             rmse █▁▁▁▁██████▁▁▁▁▁▁▁▁▁▁▁█████████▁███▁▁▁▁▁
-wandb:      sharp_value ▁████▁▁▁▁▁▁███████████▁▁▁▁▁▁▁▁▁█▁▁▁█████
-wandb: train_batch_loss ▅▅▅▇▆▅▄▆▇▆▆▅█▇▅▇██▆▅▇█▆▆▅▅▅▅▆▄▇▅▄▄▁▆▇▄▆▇
-wandb:       train_loss ▂▁▃▄▃▁▁▁▁▁▁▂▃▄▄▄▃▃▃▃▃▃▂▁▁▁▁▁▁▁▁▁▁▁▁▁▃█▄▃
-wandb:          val_acc ▁████▁▁▁▁▁▁███████████▁▁▁▁▁▁▁▁▁▁▁▁▁▁████
-wandb:         val_loss █▁▁▁▁██████▁▁▁▁▁▁▁▁▁▁▁█████████▁███▁▁▁▁▁
+wandb:              mae ████████▄▁██████████████████████████████
+wandb:              mse ████████▃▁██████████████████████████████
+wandb:               r2 ▁▁▁▁▁▁▁▁▆█▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             rmse ████████▃▁██████████████████████████████
+wandb:      sharp_value ▁▁▁▁▁█▁███▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁▁▁▁▁▁████
+wandb: train_batch_loss ▃▂▃▂▃▇▄▂█▂▃▃▃▃▃▃▃▄▂▂▁▂▃▃▂▃▃▄▃▃▂▂▂▂▃▃▂▁▁▂
+wandb:       train_loss ▂▂▂▂▂▂▂▂▇█▂▂▄▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▁▁▁▁
+wandb:          val_acc ████████▁███████████████████████████████
+wandb:         val_loss ▁▁▁▁▁▁▁▁██▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
 wandb: 
 wandb: Run summary:
-wandb:         best_acc 0.36
-wandb:            epoch 2
-wandb:              mae 1.87125
-wandb:              mse 6.26625
-wandb:               r2 -1.26654
-wandb:             rmse 2.50325
-wandb:      sharp_value 0.9526
-wandb: train_batch_loss 1.36637
-wandb:       train_loss 1.5019
-wandb:          val_acc 0.36
-wandb:         val_loss 1.44526
+wandb:         best_acc 0.42
+wandb:            epoch 13
+wandb:              mae 1.995
+wandb:              mse 7.38
+wandb:               r2 -1.1706
+wandb:             rmse 2.71662
+wandb:      sharp_value 2.34268
+wandb: train_batch_loss 1.49234
+wandb:       train_loss 1.44794
+wandb:          val_acc 0.42
+wandb:         val_loss 1.43817
 wandb: 
-wandb: Synced CNN: https://wandb.ai/pqythu/futures50/runs/28b5ssce
+wandb: Synced CNN: https://wandb.ai/pqythu/futures50/runs/3k7keudi
 wandb: Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
-wandb: Find logs at: ./wandb/run-20240907_112226-28b5ssce/logs
+wandb: Find logs at: ./wandb/run-20240907_120509-3k7keudi/logs

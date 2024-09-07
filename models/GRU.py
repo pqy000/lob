@@ -7,7 +7,7 @@ class Model(nn.Module):
         super(Model, self).__init__()
         input_dim = data.m
         hidden_dim = args.hidRNN
-        self.rnn = nn.GRU(input_size=input_dim, hidden_size=hidden_dim, num_layers=num_layers, batch_first=True)
+        self.rnn = nn.LSTM(input_size=input_dim, hidden_size=hidden_dim, num_layers=num_layers, batch_first=True)
         self.fc = nn.Linear(hidden_dim, num_classes)
 
     def forward(self, x):

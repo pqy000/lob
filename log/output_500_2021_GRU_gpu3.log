@@ -1,0 +1,114 @@
+wandb: Currently logged in as: pqy000 (pqythu). Use `wandb login --relogin` to force relogin
+GPU device ID: 3
+newdata/500_2021.npy
+0
+wandb: wandb version 0.17.9 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.12.17
+wandb: Run data is saved locally in /home/qingyi/GPU20/DeepLOB/wandb/run-20240907_160533-1jds1tx5
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run GRU
+wandb: ⭐️ View project at https://wandb.ai/pqythu/futures500
+wandb: 🚀 View run at https://wandb.ai/pqythu/futures500/runs/1jds1tx5
+2024-09-07 16:05:45.192295: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Model(
+  (rnn): LSTM(10, 64, batch_first=True)
+  (fc): Linear(in_features=64, out_features=5, bias=True)
+)
+number of parameters: 19781
+Training start
+epoch  1 | time used:  1.37s | train_loss 1.447 | valid loss 1.456 | valid acc 0.435 | mae 1.650 | mse 5.450 | rmse 2.33 | r2 -1.00 | sharp 0.00
+epoch  2 | time used:  0.05s | train_loss 1.442 | valid loss 1.456 | valid acc 0.435 | mae 1.650 | mse 5.450 | rmse 2.33 | r2 -1.00 | sharp 0.00
+epoch  3 | time used:  0.04s | train_loss 1.443 | valid loss 1.437 | valid acc 0.240 | mae 2.350 | mse 8.250 | rmse 2.87 | r2 -2.02 | sharp 2.45
+epoch  4 | time used:  0.04s | train_loss 1.433 | valid loss 1.456 | valid acc 0.435 | mae 1.650 | mse 5.450 | rmse 2.33 | r2 -1.00 | sharp 0.00
+epoch  5 | time used:  0.04s | train_loss 1.403 | valid loss 1.456 | valid acc 0.435 | mae 1.650 | mse 5.450 | rmse 2.33 | r2 -1.00 | sharp 0.00
+epoch  6 | time used:  0.05s | train_loss 1.432 | valid loss 1.456 | valid acc 0.435 | mae 1.650 | mse 5.450 | rmse 2.33 | r2 -1.00 | sharp 0.00
+epoch  7 | time used:  0.04s | train_loss 1.429 | valid loss 1.456 | valid acc 0.435 | mae 1.650 | mse 5.450 | rmse 2.33 | r2 -1.00 | sharp 0.00
+epoch  8 | time used:  0.05s | train_loss 1.429 | valid loss 1.456 | valid acc 0.435 | mae 1.650 | mse 5.450 | rmse 2.33 | r2 -1.00 | sharp 0.00
+epoch  9 | time used:  0.04s | train_loss 1.450 | valid loss 1.456 | valid acc 0.435 | mae 1.650 | mse 5.450 | rmse 2.33 | r2 -1.00 | sharp 0.00
+epoch 10 | time used:  0.04s | train_loss 1.414 | valid loss 1.519 | valid acc 0.240 | mae 2.350 | mse 8.250 | rmse 2.87 | r2 -2.02 | sharp 2.45
+saving the model to ./save/2021_500/GRU/checkpoint10.pt
+epoch 11 | time used:  0.04s | train_loss 1.444 | valid loss 1.519 | valid acc 0.240 | mae 2.350 | mse 8.250 | rmse 2.87 | r2 -2.02 | sharp 2.45
+epoch 12 | time used:  0.04s | train_loss 1.444 | valid loss 1.519 | valid acc 0.240 | mae 2.350 | mse 8.250 | rmse 2.87 | r2 -2.02 | sharp 2.45
+epoch 13 | time used:  0.04s | train_loss 1.463 | valid loss 1.519 | valid acc 0.240 | mae 2.350 | mse 8.250 | rmse 2.87 | r2 -2.02 | sharp 2.45
+epoch 14 | time used:  0.04s | train_loss 1.482 | valid loss 1.516 | valid acc 0.240 | mae 2.350 | mse 8.250 | rmse 2.87 | r2 -2.02 | sharp 2.45
+epoch 15 | time used:  0.04s | train_loss 1.440 | valid loss 1.456 | valid acc 0.435 | mae 1.650 | mse 5.450 | rmse 2.33 | r2 -1.00 | sharp 0.00
+epoch 16 | time used:  0.05s | train_loss 1.436 | valid loss 1.456 | valid acc 0.435 | mae 1.650 | mse 5.450 | rmse 2.33 | r2 -1.00 | sharp 0.00
+epoch 17 | time used:  0.07s | train_loss 1.403 | valid loss 1.456 | valid acc 0.435 | mae 1.650 | mse 5.450 | rmse 2.33 | r2 -1.00 | sharp 0.00
+epoch 18 | time used:  0.04s | train_loss 1.452 | valid loss 1.448 | valid acc 0.435 | mae 1.650 | mse 5.450 | rmse 2.33 | r2 -1.00 | sharp 0.00
+epoch 19 | time used:  0.04s | train_loss 1.472 | valid loss 1.456 | valid acc 0.435 | mae 1.650 | mse 5.450 | rmse 2.33 | r2 -1.00 | sharp 0.00
+epoch 20 | time used:  0.04s | train_loss 1.438 | valid loss 1.519 | valid acc 0.240 | mae 2.350 | mse 8.250 | rmse 2.87 | r2 -2.02 | sharp 2.45
+saving the model to ./save/2021_500/GRU/checkpoint20.pt
+epoch 21 | time used:  0.04s | train_loss 1.454 | valid loss 1.519 | valid acc 0.240 | mae 2.350 | mse 8.250 | rmse 2.87 | r2 -2.02 | sharp 2.45
+epoch 22 | time used:  0.05s | train_loss 1.469 | valid loss 1.519 | valid acc 0.240 | mae 2.350 | mse 8.250 | rmse 2.87 | r2 -2.02 | sharp 2.45
+epoch 23 | time used:  0.06s | train_loss 1.465 | valid loss 1.519 | valid acc 0.240 | mae 2.350 | mse 8.250 | rmse 2.87 | r2 -2.02 | sharp 2.45
+epoch 24 | time used:  0.04s | train_loss 1.447 | valid loss 1.519 | valid acc 0.240 | mae 2.350 | mse 8.250 | rmse 2.87 | r2 -2.02 | sharp 2.45
+epoch 25 | time used:  0.05s | train_loss 1.496 | valid loss 1.477 | valid acc 0.240 | mae 2.350 | mse 8.250 | rmse 2.87 | r2 -2.02 | sharp 2.45
+epoch 26 | time used:  0.06s | train_loss 1.449 | valid loss 1.519 | valid acc 0.240 | mae 2.350 | mse 8.250 | rmse 2.87 | r2 -2.02 | sharp 2.45
+epoch 27 | time used:  0.04s | train_loss 1.479 | valid loss 1.456 | valid acc 0.435 | mae 1.650 | mse 5.450 | rmse 2.33 | r2 -1.00 | sharp 0.00
+epoch 28 | time used:  0.04s | train_loss 1.460 | valid loss 1.519 | valid acc 0.240 | mae 2.350 | mse 8.250 | rmse 2.87 | r2 -2.02 | sharp 2.45
+epoch 29 | time used:  0.04s | train_loss 1.487 | valid loss 1.520 | valid acc 0.240 | mae 2.350 | mse 8.250 | rmse 2.87 | r2 -2.02 | sharp 2.45
+epoch 30 | time used:  0.04s | train_loss 1.496 | valid loss 1.519 | valid acc 0.240 | mae 2.350 | mse 8.250 | rmse 2.87 | r2 -2.02 | sharp 2.45
+saving the model to ./save/2021_500/GRU/checkpoint30.pt
+epoch 31 | time used:  0.04s | train_loss 1.484 | valid loss 1.519 | valid acc 0.240 | mae 2.350 | mse 8.250 | rmse 2.87 | r2 -2.02 | sharp 2.45
+epoch 32 | time used:  0.05s | train_loss 1.419 | valid loss 1.456 | valid acc 0.435 | mae 1.650 | mse 5.450 | rmse 2.33 | r2 -1.00 | sharp 0.00
+epoch 33 | time used:  0.04s | train_loss 1.439 | valid loss 1.456 | valid acc 0.435 | mae 1.650 | mse 5.450 | rmse 2.33 | r2 -1.00 | sharp 0.00
+epoch 34 | time used:  0.04s | train_loss 1.422 | valid loss 1.456 | valid acc 0.435 | mae 1.650 | mse 5.450 | rmse 2.33 | r2 -1.00 | sharp 0.00
+epoch 35 | time used:  0.04s | train_loss 1.440 | valid loss 1.456 | valid acc 0.435 | mae 1.650 | mse 5.450 | rmse 2.33 | r2 -1.00 | sharp 0.00
+epoch 36 | time used:  0.04s | train_loss 1.418 | valid loss 1.455 | valid acc 0.435 | mae 1.650 | mse 5.450 | rmse 2.33 | r2 -1.00 | sharp 0.00
+epoch 37 | time used:  0.04s | train_loss 1.451 | valid loss 1.519 | valid acc 0.240 | mae 2.350 | mse 8.250 | rmse 2.87 | r2 -2.02 | sharp 2.45
+epoch 38 | time used:  0.04s | train_loss 1.461 | valid loss 1.519 | valid acc 0.240 | mae 2.350 | mse 8.250 | rmse 2.87 | r2 -2.02 | sharp 2.45
+epoch 39 | time used:  0.05s | train_loss 1.485 | valid loss 1.520 | valid acc 0.240 | mae 2.350 | mse 8.250 | rmse 2.87 | r2 -2.02 | sharp 2.45
+epoch 40 | time used:  0.04s | train_loss 1.482 | valid loss 1.519 | valid acc 0.240 | mae 2.350 | mse 8.250 | rmse 2.87 | r2 -2.02 | sharp 2.45
+saving the model to ./save/2021_500/GRU/checkpoint40.pt
+epoch 41 | time used:  0.04s | train_loss 1.433 | valid loss 1.456 | valid acc 0.435 | mae 1.650 | mse 5.450 | rmse 2.33 | r2 -1.00 | sharp 0.00
+epoch 42 | time used:  0.04s | train_loss 1.426 | valid loss 1.519 | valid acc 0.240 | mae 2.350 | mse 8.250 | rmse 2.87 | r2 -2.02 | sharp 2.45
+epoch 43 | time used:  0.04s | train_loss 1.464 | valid loss 1.520 | valid acc 0.240 | mae 2.350 | mse 8.250 | rmse 2.87 | r2 -2.02 | sharp 2.45
+epoch 44 | time used:  0.04s | train_loss 1.487 | valid loss 1.456 | valid acc 0.435 | mae 1.650 | mse 5.450 | rmse 2.33 | r2 -1.00 | sharp 0.00
+epoch 45 | time used:  0.04s | train_loss 1.444 | valid loss 1.756 | valid acc 0.095 | mae 1.830 | mse 4.550 | rmse 2.13 | r2 -0.67 | sharp 2.45
+epoch 46 | time used:  0.04s | train_loss 1.491 | valid loss 1.519 | valid acc 0.240 | mae 2.350 | mse 8.250 | rmse 2.87 | r2 -2.02 | sharp 2.45
+epoch 47 | time used:  0.05s | train_loss 1.433 | valid loss 1.456 | valid acc 0.435 | mae 1.650 | mse 5.450 | rmse 2.33 | r2 -1.00 | sharp 0.00
+epoch 48 | time used:  0.05s | train_loss 1.441 | valid loss 1.456 | valid acc 0.435 | mae 1.650 | mse 5.450 | rmse 2.33 | r2 -1.00 | sharp 0.00
+epoch 49 | time used:  0.04s | train_loss 1.450 | valid loss 1.456 | valid acc 0.435 | mae 1.650 | mse 5.450 | rmse 2.33 | r2 -1.00 | sharp 0.00
+epoch 50 | time used:  0.04s | train_loss 1.424 | valid loss 1.456 | valid acc 0.435 | mae 1.650 | mse 5.450 | rmse 2.33 | r2 -1.00 | sharp 0.00
+saving the model to ./save/2021_500/GRU/checkpoint50.pt
+epoch 51 | time used:  0.04s | train_loss 1.425 | valid loss 1.456 | valid acc 0.435 | mae 1.650 | mse 5.450 | rmse 2.33 | r2 -1.00 | sharp 0.00
+epoch 52 | time used:  0.05s | train_loss 1.451 | valid loss 1.456 | valid acc 0.435 | mae 1.650 | mse 5.450 | rmse 2.33 | r2 -1.00 | sharp 0.00
+epoch 53 | time used:  0.04s | train_loss 1.445 | valid loss 1.457 | valid acc 0.435 | mae 1.650 | mse 5.450 | rmse 2.33 | r2 -1.00 | sharp 0.00
+Early stopping for the phase
+2024-09-07 16:05:46.211364: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/cudnn/lib64:/usr/local/cuda/lib64
+2024-09-07 16:05:46.211471: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/cudnn/lib64:/usr/local/cuda/lib64
+2024-09-07 16:05:46.211484: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+wandb: Waiting for W&B process to finish... (success).
+wandb: - 0.000 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: \ 0.000 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: | 0.000 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: / 0.000 MB of 0.022 MB uploaded (0.000 MB deduped)wandb: - 0.000 MB of 0.023 MB uploaded (0.000 MB deduped)wandb: \ 0.000 MB of 0.023 MB uploaded (0.000 MB deduped)wandb: | 0.000 MB of 0.023 MB uploaded (0.000 MB deduped)wandb: / 0.000 MB of 0.023 MB uploaded (0.000 MB deduped)wandb: - 0.000 MB of 0.023 MB uploaded (0.000 MB deduped)wandb: \ 0.000 MB of 0.023 MB uploaded (0.000 MB deduped)wandb: | 0.000 MB of 0.023 MB uploaded (0.000 MB deduped)wandb: / 0.000 MB of 0.023 MB uploaded (0.000 MB deduped)wandb: - 0.000 MB of 0.023 MB uploaded (0.000 MB deduped)wandb: \ 0.000 MB of 0.023 MB uploaded (0.000 MB deduped)wandb: | 0.000 MB of 0.023 MB uploaded (0.000 MB deduped)wandb: / 0.002 MB of 0.023 MB uploaded (0.000 MB deduped)wandb: - 0.022 MB of 0.023 MB uploaded (0.000 MB deduped)wandb: \ 0.022 MB of 0.023 MB uploaded (0.000 MB deduped)wandb: | 0.022 MB of 0.023 MB uploaded (0.000 MB deduped)wandb: / 0.022 MB of 0.023 MB uploaded (0.000 MB deduped)wandb: - 0.022 MB of 0.023 MB uploaded (0.000 MB deduped)wandb: \ 0.022 MB of 0.023 MB uploaded (0.000 MB deduped)wandb: | 0.022 MB of 0.023 MB uploaded (0.000 MB deduped)wandb: / 0.022 MB of 0.023 MB uploaded (0.000 MB deduped)wandb: - 0.022 MB of 0.023 MB uploaded (0.000 MB deduped)wandb: \ 0.022 MB of 0.023 MB uploaded (0.000 MB deduped)wandb: | 0.022 MB of 0.023 MB uploaded (0.000 MB deduped)wandb: / 0.022 MB of 0.023 MB uploaded (0.000 MB deduped)wandb: - 0.022 MB of 0.023 MB uploaded (0.000 MB deduped)wandb: \ 0.022 MB of 0.023 MB uploaded (0.000 MB deduped)wandb: | 0.022 MB of 0.023 MB uploaded (0.000 MB deduped)wandb: / 0.022 MB of 0.023 MB uploaded (0.000 MB deduped)wandb: - 0.022 MB of 0.023 MB uploaded (0.000 MB deduped)wandb: \ 0.022 MB of 0.023 MB uploaded (0.000 MB deduped)wandb: | 0.022 MB of 0.023 MB uploaded (0.000 MB deduped)wandb: / 0.022 MB of 0.023 MB uploaded (0.000 MB deduped)wandb: - 0.022 MB of 0.023 MB uploaded (0.000 MB deduped)wandb: \ 0.022 MB of 0.023 MB uploaded (0.000 MB deduped)wandb: | 0.023 MB of 0.023 MB uploaded (0.000 MB deduped)wandb: / 0.023 MB of 0.023 MB uploaded (0.000 MB deduped)wandb: - 0.023 MB of 0.023 MB uploaded (0.000 MB deduped)wandb: \ 0.023 MB of 0.023 MB uploaded (0.000 MB deduped)wandb: | 0.023 MB of 0.023 MB uploaded (0.000 MB deduped)wandb: / 0.023 MB of 0.023 MB uploaded (0.000 MB deduped)wandb: - 0.023 MB of 0.023 MB uploaded (0.000 MB deduped)wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:         best_acc ▁
+wandb:            epoch ▁
+wandb:              mae ▁▁█▁▁▁▁████▁▁▁█████████▁▁▁▁███▁█▁▃▁▁▁▁▁▁
+wandb:              mse ▃▃█▃▃▃▃████▃▃▃█████████▃▃▃▃███▃█▃▁▃▃▃▃▃▃
+wandb:               r2 ▆▆▁▆▆▆▆▁▁▁▁▆▆▆▁▁▁▁▁▁▁▁▁▆▆▆▆▁▁▁▆▁▆█▆▆▆▆▆▆
+wandb:             rmse ▃▃█▃▃▃▃████▃▃▃█████████▃▃▃▃███▃█▃▁▃▃▃▃▃▃
+wandb:      sharp_value ▁▁█▁▁▁▁████▁▁▁█████████▁▁▁▁███▁█▁█▁▁▁▁▁▁
+wandb: train_batch_loss ▄▃▄▄▆▄▄▃▆▅█▃▂▄▄▆▄▆█▇▂█▇▄▁▅▅▇▃▃▁▆▆▄▅▄▃▃▆▆
+wandb:       train_loss ▄▄▄▁▃▃▅▂▄▆▇▄▁▅▆▅▆▆█▄▇▇█▇▄▂▄▅▅▇▃▃▆▄█▃▅▃▃▄
+wandb:          val_acc ██▄████▄▄▄▄████▄▄▄▄▄█▄▄▄███▄▄▄█▄▄▁▄█████
+wandb:         val_loss ▁▁▁▁▁▁▁▃▃▃▃▁▁▁▃▃▃▃▂▃▃▃▃▁▁▁▁▃▃▃▁▃▁█▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:         best_acc 0.435
+wandb:            epoch 1
+wandb:              mae 1.65
+wandb:              mse 5.45
+wandb:               r2 -0.99817
+wandb:             rmse 2.33452
+wandb:      sharp_value 0.0
+wandb: train_batch_loss 1.58902
+wandb:       train_loss 1.44489
+wandb:          val_acc 0.435
+wandb:         val_loss 1.45581
+wandb: 
+wandb: Synced GRU: https://wandb.ai/pqythu/futures500/runs/1jds1tx5
+wandb: Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20240907_160533-1jds1tx5/logs

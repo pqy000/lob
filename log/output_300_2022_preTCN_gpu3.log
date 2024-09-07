@@ -1,0 +1,343 @@
+wandb: Currently logged in as: pqy000 (pqythu). Use `wandb login --relogin` to force relogin
+GPU device ID: 3
+newdata/300_2022.npy
+0
+wandb: wandb version 0.17.9 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.12.17
+wandb: Run data is saved locally in /home/qingyi/GPU20/DeepLOB/wandb/run-20240907_120924-2k906rmp
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run preTCN
+wandb: ⭐️ View project at https://wandb.ai/pqythu/futures300
+wandb: 🚀 View run at https://wandb.ai/pqythu/futures300/runs/2k906rmp
+2024-09-07 12:09:31.409922: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-09-07 12:09:32.466727: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/cudnn/lib64:/usr/local/cuda/lib64
+2024-09-07 12:09:32.466833: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/cudnn/lib64:/usr/local/cuda/lib64
+2024-09-07 12:09:32.466846: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+Model(
+  (feature_extractor): InceptionTimePlus(
+    (backbone): Sequential(
+      (0): InceptionBlockPlus(
+        (inception): ModuleList(
+          (0): InceptionModulePlus(
+            (bottleneck): ConvBlock(
+              (0): Conv1d(10, 32, kernel_size=(1,), stride=(1,), bias=False)
+            )
+            (convs): ModuleList(
+              (0): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(39,), stride=(1,), padding=(19,), bias=False)
+              )
+              (1): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(19,), stride=(1,), padding=(9,), bias=False)
+              )
+              (2): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(9,), stride=(1,), padding=(4,), bias=False)
+              )
+            )
+            (mp_conv): Sequential(
+              (0): MaxPool1d(kernel_size=3, stride=1, padding=1, dilation=1, ceil_mode=False)
+              (1): ConvBlock(
+                (0): Conv1d(10, 32, kernel_size=(1,), stride=(1,), bias=False)
+              )
+            )
+            (concat): Concat(dim=1)
+            (norm): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (act): ReLU()
+          )
+          (1): InceptionModulePlus(
+            (bottleneck): ConvBlock(
+              (0): Conv1d(128, 32, kernel_size=(1,), stride=(1,), bias=False)
+            )
+            (convs): ModuleList(
+              (0): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(39,), stride=(1,), padding=(19,), bias=False)
+              )
+              (1): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(19,), stride=(1,), padding=(9,), bias=False)
+              )
+              (2): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(9,), stride=(1,), padding=(4,), bias=False)
+              )
+            )
+            (mp_conv): Sequential(
+              (0): MaxPool1d(kernel_size=3, stride=1, padding=1, dilation=1, ceil_mode=False)
+              (1): ConvBlock(
+                (0): Conv1d(128, 32, kernel_size=(1,), stride=(1,), bias=False)
+              )
+            )
+            (concat): Concat(dim=1)
+            (norm): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (act): ReLU()
+          )
+          (2): InceptionModulePlus(
+            (bottleneck): ConvBlock(
+              (0): Conv1d(128, 32, kernel_size=(1,), stride=(1,), bias=False)
+            )
+            (convs): ModuleList(
+              (0): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(39,), stride=(1,), padding=(19,), bias=False)
+              )
+              (1): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(19,), stride=(1,), padding=(9,), bias=False)
+              )
+              (2): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(9,), stride=(1,), padding=(4,), bias=False)
+              )
+            )
+            (mp_conv): Sequential(
+              (0): MaxPool1d(kernel_size=3, stride=1, padding=1, dilation=1, ceil_mode=False)
+              (1): ConvBlock(
+                (0): Conv1d(128, 32, kernel_size=(1,), stride=(1,), bias=False)
+              )
+            )
+            (concat): Concat(dim=1)
+            (norm): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (3): InceptionModulePlus(
+            (bottleneck): ConvBlock(
+              (0): Conv1d(128, 32, kernel_size=(1,), stride=(1,), bias=False)
+            )
+            (convs): ModuleList(
+              (0): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(39,), stride=(1,), padding=(19,), bias=False)
+              )
+              (1): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(19,), stride=(1,), padding=(9,), bias=False)
+              )
+              (2): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(9,), stride=(1,), padding=(4,), bias=False)
+              )
+            )
+            (mp_conv): Sequential(
+              (0): MaxPool1d(kernel_size=3, stride=1, padding=1, dilation=1, ceil_mode=False)
+              (1): ConvBlock(
+                (0): Conv1d(128, 32, kernel_size=(1,), stride=(1,), bias=False)
+              )
+            )
+            (concat): Concat(dim=1)
+            (norm): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (act): ReLU()
+          )
+          (4): InceptionModulePlus(
+            (bottleneck): ConvBlock(
+              (0): Conv1d(128, 32, kernel_size=(1,), stride=(1,), bias=False)
+            )
+            (convs): ModuleList(
+              (0): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(39,), stride=(1,), padding=(19,), bias=False)
+              )
+              (1): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(19,), stride=(1,), padding=(9,), bias=False)
+              )
+              (2): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(9,), stride=(1,), padding=(4,), bias=False)
+              )
+            )
+            (mp_conv): Sequential(
+              (0): MaxPool1d(kernel_size=3, stride=1, padding=1, dilation=1, ceil_mode=False)
+              (1): ConvBlock(
+                (0): Conv1d(128, 32, kernel_size=(1,), stride=(1,), bias=False)
+              )
+            )
+            (concat): Concat(dim=1)
+            (norm): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (act): ReLU()
+          )
+          (5): InceptionModulePlus(
+            (bottleneck): ConvBlock(
+              (0): Conv1d(128, 32, kernel_size=(1,), stride=(1,), bias=False)
+            )
+            (convs): ModuleList(
+              (0): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(39,), stride=(1,), padding=(19,), bias=False)
+              )
+              (1): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(19,), stride=(1,), padding=(9,), bias=False)
+              )
+              (2): ConvBlock(
+                (0): Conv1d(32, 32, kernel_size=(9,), stride=(1,), padding=(4,), bias=False)
+              )
+            )
+            (mp_conv): Sequential(
+              (0): MaxPool1d(kernel_size=3, stride=1, padding=1, dilation=1, ceil_mode=False)
+              (1): ConvBlock(
+                (0): Conv1d(128, 32, kernel_size=(1,), stride=(1,), bias=False)
+              )
+            )
+            (concat): Concat(dim=1)
+            (norm): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (shortcut): ModuleList(
+          (0): ConvBlock(
+            (0): Conv1d(10, 128, kernel_size=(1,), stride=(1,), bias=False)
+            (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (act): ModuleList(
+          (0): ReLU()
+          (1): ReLU()
+        )
+        (add): Add
+      )
+    )
+    (head): Sequential(
+      (0): Sequential(
+        (0): GAP1d(
+          (gap): AdaptiveAvgPool1d(output_size=1)
+          (flatten): Reshape(bs)
+        )
+        (1): LinBnDrop(
+          (0): Linear(in_features=128, out_features=5, bias=True)
+        )
+      )
+    )
+  )
+  (fc): Linear(in_features=5, out_features=5, bias=True)
+)
+number of parameters: 457251
+Training start
+epoch  1 | time used:  2.73s | train_loss 1.534 | valid loss 1.547 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch  2 | time used:  0.57s | train_loss 1.530 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch  3 | time used:  0.57s | train_loss 1.517 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch  4 | time used:  0.61s | train_loss 1.520 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch  5 | time used:  0.61s | train_loss 1.514 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch  6 | time used:  0.64s | train_loss 1.524 | valid loss 1.405 | valid acc 0.347 | mae 1.823 | mse 5.912 | rmse 2.43 | r2 -1.28 | sharp 0.00
+epoch  7 | time used:  0.76s | train_loss 1.543 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch  8 | time used:  0.59s | train_loss 1.742 | valid loss 1.842 | valid acc 0.080 | mae 1.708 | mse 3.978 | rmse 1.99 | r2 -0.54 | sharp 2.57
+epoch  9 | time used:  0.42s | train_loss 1.728 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 10 | time used:  0.41s | train_loss 1.519 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+saving the model to ./save/2022_300/preTCN/checkpoint10.pt
+epoch 11 | time used:  0.44s | train_loss 1.520 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 12 | time used:  0.55s | train_loss 1.518 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 13 | time used:  0.62s | train_loss 1.516 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 14 | time used:  0.59s | train_loss 1.522 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 15 | time used:  0.55s | train_loss 1.517 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 16 | time used:  0.55s | train_loss 1.513 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 17 | time used:  0.55s | train_loss 1.502 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 18 | time used:  0.57s | train_loss 1.522 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 19 | time used:  0.55s | train_loss 1.515 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 20 | time used:  0.56s | train_loss 1.518 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+saving the model to ./save/2022_300/preTCN/checkpoint20.pt
+epoch 21 | time used:  0.54s | train_loss 1.522 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 22 | time used:  0.55s | train_loss 1.517 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 23 | time used:  0.55s | train_loss 1.507 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 24 | time used:  0.50s | train_loss 1.541 | valid loss 1.405 | valid acc 0.347 | mae 1.823 | mse 5.912 | rmse 2.43 | r2 -1.28 | sharp 0.00
+epoch 25 | time used:  0.54s | train_loss 1.541 | valid loss 1.611 | valid acc 0.250 | mae 2.252 | mse 7.633 | rmse 2.76 | r2 -1.95 | sharp 2.78
+epoch 26 | time used:  0.54s | train_loss 1.544 | valid loss 1.407 | valid acc 0.347 | mae 1.823 | mse 5.912 | rmse 2.43 | r2 -1.28 | sharp 0.00
+epoch 27 | time used:  0.55s | train_loss 1.554 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 28 | time used:  0.50s | train_loss 1.516 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 29 | time used:  0.53s | train_loss 1.521 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 30 | time used:  0.55s | train_loss 1.523 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+saving the model to ./save/2022_300/preTCN/checkpoint30.pt
+epoch 31 | time used:  0.65s | train_loss 1.511 | valid loss 1.851 | valid acc 0.102 | mae 1.452 | mse 3.047 | rmse 1.75 | r2 -0.18 | sharp 2.18
+epoch 32 | time used:  0.67s | train_loss 1.500 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 33 | time used:  0.64s | train_loss 1.509 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 34 | time used:  0.62s | train_loss 1.522 | valid loss 1.405 | valid acc 0.347 | mae 1.823 | mse 5.912 | rmse 2.43 | r2 -1.28 | sharp 0.00
+epoch 35 | time used:  0.57s | train_loss 1.522 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 36 | time used:  0.55s | train_loss 1.516 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 37 | time used:  0.55s | train_loss 1.520 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 38 | time used:  0.56s | train_loss 1.517 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 39 | time used:  0.56s | train_loss 1.517 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 40 | time used:  0.50s | train_loss 1.518 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+saving the model to ./save/2022_300/preTCN/checkpoint40.pt
+epoch 41 | time used:  0.53s | train_loss 1.517 | valid loss 1.593 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 42 | time used:  0.54s | train_loss 1.522 | valid loss 1.533 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 43 | time used:  0.59s | train_loss 1.486 | valid loss 1.475 | valid acc 0.347 | mae 1.823 | mse 5.912 | rmse 2.43 | r2 -1.28 | sharp 0.00
+epoch 44 | time used:  0.56s | train_loss 1.515 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 45 | time used:  0.56s | train_loss 1.514 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 46 | time used:  0.52s | train_loss 1.531 | valid loss 1.405 | valid acc 0.347 | mae 1.823 | mse 5.912 | rmse 2.43 | r2 -1.28 | sharp 0.00
+epoch 47 | time used:  0.54s | train_loss 1.540 | valid loss 1.593 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 48 | time used:  0.49s | train_loss 1.521 | valid loss 1.754 | valid acc 0.215 | mae 1.397 | mse 2.623 | rmse 1.62 | r2 -0.01 | sharp 2.57
+epoch 49 | time used:  0.50s | train_loss 1.516 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 50 | time used:  0.52s | train_loss 1.515 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+saving the model to ./save/2022_300/preTCN/checkpoint50.pt
+epoch 51 | time used:  0.57s | train_loss 1.520 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 52 | time used:  0.53s | train_loss 1.506 | valid loss 1.405 | valid acc 0.347 | mae 1.823 | mse 5.912 | rmse 2.43 | r2 -1.28 | sharp 0.00
+epoch 53 | time used:  0.56s | train_loss 1.536 | valid loss 1.405 | valid acc 0.347 | mae 1.823 | mse 5.912 | rmse 2.43 | r2 -1.28 | sharp 0.00
+epoch 54 | time used:  0.54s | train_loss 1.542 | valid loss 1.405 | valid acc 0.347 | mae 1.823 | mse 5.912 | rmse 2.43 | r2 -1.28 | sharp 0.00
+epoch 55 | time used:  0.56s | train_loss 1.514 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 56 | time used:  0.56s | train_loss 1.518 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 57 | time used:  0.57s | train_loss 1.510 | valid loss 1.476 | valid acc 0.362 | mae 1.752 | mse 5.633 | rmse 2.37 | r2 -1.17 | sharp 2.23
+epoch 58 | time used:  0.56s | train_loss 1.515 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 59 | time used:  0.51s | train_loss 1.512 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 60 | time used:  0.56s | train_loss 1.469 | valid loss 1.407 | valid acc 0.347 | mae 1.823 | mse 5.912 | rmse 2.43 | r2 -1.28 | sharp 0.00
+saving the model to ./save/2022_300/preTCN/checkpoint60.pt
+epoch 61 | time used:  0.54s | train_loss 1.519 | valid loss 1.593 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 62 | time used:  0.59s | train_loss 1.527 | valid loss 1.406 | valid acc 0.347 | mae 1.823 | mse 5.912 | rmse 2.43 | r2 -1.28 | sharp 0.00
+epoch 63 | time used:  0.56s | train_loss 1.540 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 64 | time used:  0.56s | train_loss 1.515 | valid loss 1.592 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 65 | time used:  0.59s | train_loss 1.508 | valid loss 1.408 | valid acc 0.347 | mae 1.823 | mse 5.912 | rmse 2.43 | r2 -1.28 | sharp 0.00
+epoch 66 | time used:  0.55s | train_loss 1.502 | valid loss 1.412 | valid acc 0.347 | mae 1.823 | mse 5.912 | rmse 2.43 | r2 -1.28 | sharp 0.00
+epoch 67 | time used:  0.53s | train_loss 1.516 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 68 | time used:  0.54s | train_loss 1.518 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 69 | time used:  0.55s | train_loss 1.530 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 70 | time used:  0.56s | train_loss 1.513 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+saving the model to ./save/2022_300/preTCN/checkpoint70.pt
+epoch 71 | time used:  0.56s | train_loss 1.520 | valid loss 1.581 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 72 | time used:  0.56s | train_loss 1.522 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 73 | time used:  0.56s | train_loss 1.505 | valid loss 1.591 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 74 | time used:  0.56s | train_loss 1.484 | valid loss 1.482 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 75 | time used:  0.56s | train_loss 1.479 | valid loss 1.405 | valid acc 0.347 | mae 1.823 | mse 5.912 | rmse 2.43 | r2 -1.28 | sharp 0.00
+epoch 76 | time used:  0.56s | train_loss 1.546 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 77 | time used:  0.56s | train_loss 1.528 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 78 | time used:  0.56s | train_loss 1.513 | valid loss 1.406 | valid acc 0.347 | mae 1.823 | mse 5.912 | rmse 2.43 | r2 -1.28 | sharp 0.00
+epoch 79 | time used:  0.56s | train_loss 1.539 | valid loss 1.405 | valid acc 0.347 | mae 1.823 | mse 5.912 | rmse 2.43 | r2 -1.28 | sharp 0.00
+epoch 80 | time used:  0.55s | train_loss 1.506 | valid loss 1.593 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+saving the model to ./save/2022_300/preTCN/checkpoint80.pt
+epoch 81 | time used:  0.55s | train_loss 1.519 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 82 | time used:  0.55s | train_loss 1.521 | valid loss 1.593 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 83 | time used:  0.56s | train_loss 1.541 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 84 | time used:  0.55s | train_loss 1.545 | valid loss 1.405 | valid acc 0.347 | mae 1.823 | mse 5.912 | rmse 2.43 | r2 -1.28 | sharp 0.00
+epoch 85 | time used:  0.55s | train_loss 1.544 | valid loss 1.405 | valid acc 0.347 | mae 1.823 | mse 5.912 | rmse 2.43 | r2 -1.28 | sharp 0.00
+epoch 86 | time used:  0.56s | train_loss 1.528 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 87 | time used:  0.54s | train_loss 1.518 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 88 | time used:  0.54s | train_loss 1.519 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 89 | time used:  0.54s | train_loss 1.519 | valid loss 1.592 | valid acc 0.347 | mae 1.823 | mse 5.912 | rmse 2.43 | r2 -1.28 | sharp 0.00
+epoch 90 | time used:  0.54s | train_loss 1.541 | valid loss 1.407 | valid acc 0.347 | mae 1.823 | mse 5.912 | rmse 2.43 | r2 -1.28 | sharp 0.00
+saving the model to ./save/2022_300/preTCN/checkpoint90.pt
+epoch 91 | time used:  0.55s | train_loss 1.533 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 92 | time used:  0.56s | train_loss 1.522 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 93 | time used:  0.56s | train_loss 1.563 | valid loss 1.405 | valid acc 0.347 | mae 1.823 | mse 5.912 | rmse 2.43 | r2 -1.28 | sharp 0.00
+epoch 94 | time used:  0.56s | train_loss 1.543 | valid loss 1.592 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 95 | time used:  0.54s | train_loss 1.492 | valid loss 1.594 | valid acc 0.265 | mae 2.178 | mse 7.332 | rmse 2.71 | r2 -1.83 | sharp 2.57
+epoch 96 | time used:  0.53s | train_loss 1.528 | valid loss 1.405 | valid acc 0.347 | mae 1.823 | mse 5.912 | rmse 2.43 | r2 -1.28 | sharp 0.00
+epoch 97 | time used:  0.54s | train_loss 1.542 | valid loss 1.405 | valid acc 0.347 | mae 1.823 | mse 5.912 | rmse 2.43 | r2 -1.28 | sharp 0.00
+epoch 98 | time used:  0.56s | train_loss 1.544 | valid loss 1.405 | valid acc 0.347 | mae 1.823 | mse 5.912 | rmse 2.43 | r2 -1.28 | sharp 0.00
+epoch 99 | time used:  0.55s | train_loss 1.529 | valid loss 1.818 | valid acc 0.215 | mae 1.397 | mse 2.623 | rmse 1.62 | r2 -0.01 | sharp 2.57
+epoch 100 | time used:  0.57s | train_loss 1.540 | valid loss 1.405 | valid acc 0.347 | mae 1.823 | mse 5.912 | rmse 2.43 | r2 -1.28 | sharp 0.00
+saving the model to ./save/2022_300/preTCN/checkpoint100.pt
+wandb: Waiting for W&B process to finish... (success).
+wandb: - 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: \ 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: | 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: / 0.001 MB of 0.033 MB uploaded (0.000 MB deduped)wandb: - 0.001 MB of 0.033 MB uploaded (0.000 MB deduped)wandb: \ 0.001 MB of 0.033 MB uploaded (0.000 MB deduped)wandb: | 0.001 MB of 0.033 MB uploaded (0.000 MB deduped)wandb: / 0.001 MB of 0.033 MB uploaded (0.000 MB deduped)wandb: - 0.001 MB of 0.033 MB uploaded (0.000 MB deduped)wandb: \ 0.001 MB of 0.033 MB uploaded (0.000 MB deduped)wandb: | 0.001 MB of 0.033 MB uploaded (0.000 MB deduped)wandb: / 0.001 MB of 0.033 MB uploaded (0.000 MB deduped)wandb: - 0.001 MB of 0.033 MB uploaded (0.000 MB deduped)wandb: \ 0.001 MB of 0.033 MB uploaded (0.000 MB deduped)wandb: | 0.001 MB of 0.033 MB uploaded (0.000 MB deduped)wandb: / 0.001 MB of 0.033 MB uploaded (0.000 MB deduped)wandb: - 0.001 MB of 0.033 MB uploaded (0.000 MB deduped)wandb: \ 0.001 MB of 0.033 MB uploaded (0.000 MB deduped)wandb: | 0.001 MB of 0.033 MB uploaded (0.000 MB deduped)wandb: / 0.001 MB of 0.033 MB uploaded (0.000 MB deduped)wandb: - 0.033 MB of 0.033 MB uploaded (0.000 MB deduped)wandb: \ 0.033 MB of 0.033 MB uploaded (0.000 MB deduped)wandb: | 0.033 MB of 0.033 MB uploaded (0.000 MB deduped)wandb: / 0.033 MB of 0.033 MB uploaded (0.000 MB deduped)wandb: - 0.033 MB of 0.033 MB uploaded (0.000 MB deduped)wandb: \ 0.033 MB of 0.033 MB uploaded (0.000 MB deduped)wandb: | 0.033 MB of 0.033 MB uploaded (0.000 MB deduped)wandb: / 0.033 MB of 0.033 MB uploaded (0.000 MB deduped)wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:         best_acc ▁
+wandb:            epoch ▁
+wandb:              mae ██▅▃█████▅▅█▁▅██████▅▅▄█▅▅███▅███▅█▅▅█▅▄
+wandb:              mse ██▆▃█████▆▆█▁▆██████▆▆▅█▆▆███▆███▆█▆▆█▆▅
+wandb:               r2 ▁▁▃▆▁▁▁▁▁▃▃▁█▃▁▁▁▁▁▁▃▃▄▁▃▃▁▁▁▃▁▁▁▃▁▃▃▁▃▄
+wandb:             rmse ██▆▃█████▆▆█▁▆██████▆▆▆█▆▆███▆███▆█▆▆█▆▆
+wandb:      sharp_value ██▁██████▁▁█▇▁██████▁▁▇█▁▁███▁███▁█▁▁█▁▇
+wandb: train_batch_loss ▄▃▅█▄▅▅▄▃▄▅▃▃▄▂▄▂▁▄▃▄▄▄▃▄▃▅▄▄▄▃▃▄▄▂▃▄▃▄▆
+wandb:       train_loss ▂▂▂█▂▂▂▂▂▂▃▂▂▂▂▂▂▂▂▂▂▃▂▂▂▂▂▂▂▁▂▃▂▃▂▂▂▃▃▃
+wandb:          val_acc ▆▆█▁▆▆▆▆▆▆█▆▂█▆▆▆▆█▆▆█▆▆▆▆▆▆▆▆▆█▆█▆█▆▆██
+wandb:         val_loss ▃▄▁█▄▄▄▄▄▁▁▄█▁▄▄▃▄▄▄▁▁▂▄▁▁▄▄▄▁▄▄▄▁▄▁▁▄▁▂
+wandb: 
+wandb: Run summary:
+wandb:         best_acc 0.3625
+wandb:            epoch 57
+wandb:              mae 1.7525
+wandb:              mse 5.6325
+wandb:               r2 -1.17388
+wandb:             rmse 2.37329
+wandb:      sharp_value 2.22807
+wandb: train_batch_loss 1.41954
+wandb:       train_loss 1.54039
+wandb:          val_acc 0.3475
+wandb:         val_loss 1.47623
+wandb: 
+wandb: Synced preTCN: https://wandb.ai/pqythu/futures300/runs/2k906rmp
+wandb: Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20240907_120924-2k906rmp/logs

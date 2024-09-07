@@ -5,7 +5,7 @@ import pandas as pd
 # 参数选择范围
 years = [2020, 2021, 2022]
 ids = [50, 300, 500]
-models = ["Attention", "CNN",  "GRU", "preTCN", "FuturesNet"]
+models = ["Attention", "CNN",  "GRU", "Inception", "FuturesNet"]
 
 results_list = []
 

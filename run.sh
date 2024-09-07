@@ -45,12 +45,19 @@ echo "All processes completed."
 # bash run.sh "2021" "50" "CNN GRU Attention preTCN FuturesNet" "1 2 3 4 5"
 # bash run.sh "2021" "500" "CNN GRU Attention preTCN FuturesNet" "1 2 3 4 5"
 
-# bash run.sh "2022" "50" "CNN GRU Attention preTCN FuturesNet" "1 2 3 4 5"
-# bash run.sh "2022" "300" "CNN GRU Attention preTCN FuturesNet" "1 2 3 4 5"
-# bash run.sh "2022" "500" "CNN GRU Attention preTCN FuturesNet" "1 2 3 4 5"
+# bash run.sh "2022" "50" "CNN GRU Attention preTCN FuturesNet"  "0 1 2 3 4"
+# bash run.sh "2022" "300" "CNN GRU Attention preTCN FuturesNet" "0 1 2 3 4"
+# bash run.sh "2022" "500" "CNN GRU Attention preTCN FuturesNet" "0 1 2 3 4"
 
-# bash run.sh "2022" "50" "CNN GRU Attention" "0 1 2"
-# bash run.sh "2022" "300" "CNN GRU Attention" "0 1 2"
-# bash run.sh "2022" "500" "CNN GRU Attention" "0 1 2"
+# bash run.sh "2020 2021 2022" "50 300" "FuturesNet" "0 1 2 3 4 5"
+# bash run.sh "2020 2021 2022" "500" "FuturesNet" "0 1 2"
+
+# bash run.sh "2020 2021 2022" "50" "CNN GRU" "0 1 2 3 4 5"
+# bash run.sh "2020 2021 2022" "300" "CNN GRU" "0 1 2 3 4 5"
+# bash run.sh "2020 2021 2022" "500" "CNN GRU" "0 1 2 3 4 5"
+# bash run.sh "2020 2021 2022" "50 300" "FuturesNet" "0 1 2 3 4 5"
+# bash run.sh "2020 2021 2022" "500" "FuturesNet" "0 1 2"
+# bash run.sh "2020 2021 2022" "50 300" "Inception" "0 1 2 3 4 5"
+# bash run.sh "2020 2021 2022" "500" "Inception" "0 1 2"
 
 
